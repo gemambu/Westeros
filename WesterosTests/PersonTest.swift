@@ -53,6 +53,19 @@ class CharacterTest: XCTestCase {
         XCTAssertEqual(ned.fullName, "Eddard Stark")
     }
     
+    func testPersonEquality(){
+        
+        //Identidad
+        XCTAssertEqual(ned, ned)
+        
+        // Igualdad
+        let ned2 = Person(name: "Eddard", alias: "Ned", house: starkHouse)
+        XCTAssertEqual(ned, ned2)
+        
+        // Desigualdad
+        XCTAssertNotEqual(ned, robb)
+    }
+    
     func testCompareOrderPersons(){
         XCTAssertTrue(ned < robb)
         XCTAssertFalse(arya > tyrion)

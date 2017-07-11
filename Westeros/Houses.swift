@@ -30,7 +30,7 @@ extension Houses {
         var exists : Bool = false
         
         for savedHouse in self._houses {
-            guard savedHouse.proxy != house.proxy else {
+            guard savedHouse.proxyForEquality != house.proxyForEquality else {
                 exists = true
                 break
             }
