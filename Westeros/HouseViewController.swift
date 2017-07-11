@@ -22,6 +22,12 @@ class HouseViewController: UIViewController {
         self.model = model
         super.init(nibName: nil, bundle: nil)
         
+        // asignamos el titulo en el init para que se cargue al arrancar y no
+        // cuando se pulse por primera vez
+        title = self.model.name
+
+        
+        
     }
     
     // chapuza de los de Cupertino (relacionada con los nil)
@@ -38,7 +44,6 @@ class HouseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         syncViewWithModel()
     }
 
