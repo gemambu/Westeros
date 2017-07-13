@@ -14,11 +14,43 @@ final class Repository {
 
 protocol HouseFactory {
     var houses : [House] { get }
+    func findHouse(name: String)->House!
+    func findPerson(personName: String)->Person!
 }
 
 final class LocalFactory : HouseFactory {
     
     
+    
+    public func findHouse(name: String)->House! {
+        let houseFound = self.houses.filter {$0.name == name}
+        if(houseFound.count == 0){
+            return nil
+        }
+        return houseFound.first!
+    }
+    
+    public func findPerson(personName: String)->Person! {
+        var person : Person!
+        
+        for house in houses {
+            person = house.findPerson(name: personName)
+            if (person != nil){
+                return person
+            }
+        
+        }
+        
+//        houses.map {
+//            person = $0.findPerson(name: personName)
+//            if (person != nil){
+//                return person
+//            }
+//        }
+
+        return nil
+        
+    }
     
     var houses: [House] {
         get {

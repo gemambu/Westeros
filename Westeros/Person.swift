@@ -25,6 +25,7 @@ final class Person {
     
     init(name: String, alias: String?, house: House){
         (self.name, _alias, self.house) = (name, alias, house)
+        self.house.addPerson(person: self)
     }
     
     convenience init(name: String, house: House) {

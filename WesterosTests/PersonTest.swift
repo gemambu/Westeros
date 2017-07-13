@@ -11,10 +11,11 @@ import XCTest
 
 class CharacterTest: XCTestCase {
     
+    let houseList = Repository.local.houses
+
     var starkHouse : House!
-    var starkSigil : Sigil!
     var lannisterHouse : House!
-    var lannisterSigil : Sigil!
+    
     var ned    : Person!
     var robb   : Person!
     var arya    : Person!
@@ -23,11 +24,9 @@ class CharacterTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        starkSigil = Sigil(description: "Direwolf", image: #imageLiteral(resourceName: "codeIsComing.png"))
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        starkHouse = Repository.local.findHouse(name: "Stark")
+        lannisterHouse = Repository.local.findHouse(name: "Lannister")
         
-        lannisterSigil = Sigil (description: "Rampant Lion", image: #imageLiteral(resourceName: "lannister.jpg"))
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
         
         ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
         robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
@@ -69,6 +68,18 @@ class CharacterTest: XCTestCase {
     func testCompareOrderPersons(){
         XCTAssertTrue(ned < robb)
         XCTAssertFalse(arya > tyrion)
+    }
+    
+    func testCreatePerson(){
+        _ = Person(name: "Samsa", house: starkHouse)
+        XCTAssertEqual(starkHouse.count, 4)
+        
+        _ = Person(name: "Samsa", house: starkHouse)
+        XCTAssertEqual(starkHouse.count, 4)
+        
+        _ = Person(name: "Jaime Lannister", alias: "Kingslayer", house: lannisterHouse)
+        XCTAssertEqual(starkHouse.count, 4)
+        XCTAssertEqual(lannisterHouse.count, 3)
     }
 
 }

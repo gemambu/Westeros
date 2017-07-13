@@ -26,6 +26,16 @@ final class House {
 }
 
 extension House {
+    func findPerson(name: String) -> Person!{
+        let membersFound = _members.filter{ $0.name == name }
+        if(membersFound.count == 0){
+            return nil
+        }
+        return membersFound.first!
+    }
+}
+
+extension House {
     var count : Int {
         return _members.count
     }

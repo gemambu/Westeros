@@ -20,11 +20,12 @@ class HouseTests: XCTestCase {
     var starkHouse : House!
     var lannisterHouse : House!
     
-    var houseList : Houses!
-    
     var robb: Person!
     var arya : Person!
     var tyrion : Person!
+    
+    
+    let houseList = Repository.local.houses
     
     override func setUp() {
         super.setUp()
@@ -34,15 +35,16 @@ class HouseTests: XCTestCase {
         
         starkSigil = Sigil(description: "Direwolf", image: starkImage)
         lannisterSigil = Sigil (description: "Rampant Lion", image: lannisterImage)
-        
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+    
+        starkHouse = Repository.local.findHouse(name: "Stark")
+        lannisterHouse = Repository.local.findHouse(name: "Lannister")
         
         robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+
         
-        houseList = Houses()
+        
         
     }
     
@@ -52,29 +54,28 @@ class HouseTests: XCTestCase {
     }
     
     func testHouseExistence(){
-        
         XCTAssertNotNil(starkHouse)
     }
     
     func testSigilExistence(){
         XCTAssertNotNil(starkSigil)
-        
-        
         XCTAssertNotNil(lannisterSigil)
     }
     
     func testAddPersons(){
-        XCTAssertEqual(starkHouse.count, 0)
-        starkHouse.addPerson(person: robb)
+        let starkHouse2 = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        XCTAssertEqual(starkHouse2.count, 0)
+        starkHouse2.addPerson(person: robb)
         
-        XCTAssertEqual(starkHouse.count, 1)
-        starkHouse.addPerson(person: arya)
+        XCTAssertEqual(starkHouse2.count, 1)
+        starkHouse2.addPerson(person: arya)
         
-        XCTAssertEqual(starkHouse.count, 2)
+        XCTAssertEqual(starkHouse2.count, 2)
         
-        XCTAssertEqual(lannisterHouse.count, 0)
-        starkHouse.addPerson(person: tyrion)
-        XCTAssertEqual(starkHouse.count, 2)
+        let lannisterHouse2 = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        XCTAssertEqual(lannisterHouse2.count, 0)
+        starkHouse2.addPerson(person: tyrion)
+        XCTAssertEqual(starkHouse2.count, 2)
     }
     
     func testCompareHouses(){
@@ -94,20 +95,31 @@ class HouseTests: XCTestCase {
         
         // Igualdad
         let starkHouse2 = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        XCTAssertEqual(starkHouse, starkHouse2)
+        XCTAssertEqual(starkHouse2, starkHouse2)
         
         // Desigualdad
         XCTAssertNotEqual(starkHouse, lannisterHouse)
     }
     
-    func testAddHouse(){
-        houseList.addHouse(house: starkHouse)
-        XCTAssertEqual(houseList.count, 1)
+//    func testAddHouse(){
+//        houseList.addHouse(house: starkHouse)
+//        XCTAssertEqual(houseList.count, 1)
+//        
+//        houseList.addHouse(house: lannisterHouse)
+//        XCTAssertEqual(houseList.count, 2)
+//        
+//        houseList.addHouse(house: lannisterHouse)
+//        XCTAssertEqual(houseList.count, 2)
+//    }
+    
+    func testFindHouse(){
+        let house = Repository.local.findHouse(name: "Stark")
+        XCTAssertEqual(house?.name, "Stark")
         
-        houseList.addHouse(house: lannisterHouse)
-        XCTAssertEqual(houseList.count, 2)
+        let starkSigil = Sigil(description: "Direwolf", image: starkImage)
+        XCTAssertEqual(house?.sigil.description, starkSigil.description)
         
-        houseList.addHouse(house: lannisterHouse)
-        XCTAssertEqual(houseList.count, 2)
+        let nilHouse = Repository.local.findHouse(name: "Jarl")
+        XCTAssertNil(nilHouse)
     }
 }

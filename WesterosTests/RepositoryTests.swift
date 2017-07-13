@@ -27,6 +27,18 @@ class RepositoryTests: XCTestCase {
         XCTAssertNotNil(houses)
         XCTAssertEqual(houses.count, 2)
     }
+    
+    func testLocalRepositoryFilterByPerson(){
+        let housePerson = Repository.local.findPerson(personName: "Robb")
+        XCTAssertNotNil(housePerson)
+        XCTAssertEqual(housePerson?.name, "Robb")
+        XCTAssertEqual(housePerson?.alias, "The young wolf")
+        XCTAssertEqual(housePerson?.house, Repository.local.findHouse(name: "Stark"))
+
+        
+        let ninlPerson = Repository.local.findPerson(personName: "Sponje bob")
+        XCTAssertNil(ninlPerson)
+    }
 
     
 }
