@@ -63,7 +63,7 @@ class HouseTests: XCTestCase {
     }
     
     func testAddPersons(){
-        let starkHouse2 = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        let starkHouse2 = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!)
         XCTAssertEqual(starkHouse2.count, 0)
         starkHouse2.addPerson(person: robb)
         
@@ -72,7 +72,7 @@ class HouseTests: XCTestCase {
         
         XCTAssertEqual(starkHouse2.count, 2)
         
-        let lannisterHouse2 = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        let lannisterHouse2 = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", url: URL(string: "http://awoiaf.westeros.org/index.php/Lannister")!)
         XCTAssertEqual(lannisterHouse2.count, 0)
         starkHouse2.addPerson(person: tyrion)
         XCTAssertEqual(starkHouse2.count, 2)
@@ -94,23 +94,12 @@ class HouseTests: XCTestCase {
         XCTAssertEqual(starkHouse, starkHouse)
         
         // Igualdad
-        let starkHouse2 = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        let starkHouse2 = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!)
         XCTAssertEqual(starkHouse2, starkHouse2)
         
         // Desigualdad
         XCTAssertNotEqual(starkHouse, lannisterHouse)
     }
-    
-//    func testAddHouse(){
-//        houseList.addHouse(house: starkHouse)
-//        XCTAssertEqual(houseList.count, 1)
-//        
-//        houseList.addHouse(house: lannisterHouse)
-//        XCTAssertEqual(houseList.count, 2)
-//        
-//        houseList.addHouse(house: lannisterHouse)
-//        XCTAssertEqual(houseList.count, 2)
-//    }
     
     func testFindHouse(){
         let house = Repository.local.findHouse(name: "Stark")

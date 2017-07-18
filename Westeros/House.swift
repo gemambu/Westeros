@@ -17,21 +17,18 @@ final class House {
     let name : String
     let sigil : Sigil
     let words : Words
+    let wikiURL: URL
     private var _members : Members
     
-    init(name: String, sigil: Sigil, words: Words){
-      (self.name, self.sigil, self.words) = (name, sigil, words)
+    init(name: String, sigil: Sigil, words: Words, url: URL){
+      (self.name, self.sigil, self.words, self.wikiURL) = (name, sigil, words, url)
         _members = Members()
     }
 }
 
 extension House {
     func findPerson(name: String) -> Person!{
-        let membersFound = _members.filter{ $0.name == name }
-        if(membersFound.count == 0){
-            return nil
-        }
-        return membersFound.first!
+        return _members.filter{ $0.name == name }.first
     }
 }
 
@@ -45,7 +42,17 @@ extension House {
             return
         }
         _members.insert(person)
-       
+    }
+    
+    // variadic version
+    func addPerson(persons: Person...){
+        for person in persons{
+            addPerson(person: person)
+        }
+    }
+    
+    func getMembers() -> Members{
+        return _members
     }
 }
 
