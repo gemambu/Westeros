@@ -44,7 +44,31 @@ class HouseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupUI()
         syncViewWithModel()
     }
+    
+    func setupUI(){
+        // Creamos un boton a la barra del navigationController
+        let wiki = UIBarButtonItem(title: "Wiki",
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(displayWiki))
+        
+        // añadimos el boton
+        navigationItem.rightBarButtonItem = wiki
+    }
+    
+    @objc func displayWiki(){
+        
+        // Creamos un WikiVC 
+        let wikiVC = WikiViewController(model: model)
+        
+        // lo cargamos en el navigation
+        navigationController?.pushViewController(wikiVC, animated: true)
+        
+    }
+    
+
 
 }

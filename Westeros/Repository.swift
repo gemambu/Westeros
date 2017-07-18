@@ -38,13 +38,13 @@ final class LocalFactory : HouseFactory {
             let lannisterSigil = Sigil(description: "Rampant Lion", image: lannisterImage)
             let targaryenSigil = Sigil(description: "Red three-headed dragon,", image: targaryenImage)
             
-            let starkURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
+            let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
             let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: starkURL)
             
-            let lannisterURL = URL(string: "http://awoiaf.westeros.org/index.php/Lannister")!
+            let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/Lannister")!
             let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", url: lannisterURL)
             
-            let targaryenURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Targaryen")!
+            let targaryenURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
             let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire and blood", url: targaryenURL)
             
             let ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
