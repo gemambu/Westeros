@@ -111,4 +111,9 @@ class HouseTests: XCTestCase {
         let nilHouse = Repository.local.findHouse(name: "Jarl")
         XCTAssertNil(nilHouse)
     }
+    
+    func testGetSortedMembers(){
+        let members = starkHouse.sortedMembers()
+        XCTAssertEqual(members[0].name, "Arya")
+    }
 }

@@ -51,8 +51,10 @@ extension House {
         }
     }
     
-    func getMembers() -> Members{
-        return _members
+    // Sorted [Person]
+    func sortedMembers() -> [Person]{
+        let memberArray : [Person] = Array(_members)
+        return memberArray.sorted()
     }
 }
 
