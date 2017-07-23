@@ -11,10 +11,12 @@ import XCTest
 class RepositoryTests: XCTestCase {
     
     var localhouses : [House]!
+    var localseasons : [Season]!
     
     override func setUp() {
         super.setUp()
         localhouses = Repository.local.houses
+        localseasons = Repository.local.seasons
     }
     
     override func tearDown() {
@@ -25,12 +27,16 @@ class RepositoryTests: XCTestCase {
         XCTAssertNotNil(Repository.local)
     }
     
+//MARK: - HOUSES
+    
     func testLocalRepositoryHousesCreation(){
         let houses = Repository.local.houses
         XCTAssertNotNil(houses)
         XCTAssertEqual(houses.count, 3)
         XCTAssertEqual(houses.first, Repository.local.findHouse(name: "Lannister"))
     }
+    
+
     
     func testLocalRepositoryFilterByPerson(){
         let housePerson = Repository.local.findPerson(personName: "Robb")
@@ -43,6 +49,8 @@ class RepositoryTests: XCTestCase {
         let ninlPerson = Repository.local.findPerson(personName: "Sponje bob")
         XCTAssertNil(ninlPerson)
     }
+    
+    
     
     func testReturnsSortedHousesArray(){
         XCTAssertEqual(Repository.local.houses.first?.name, "Lannister")
@@ -67,7 +75,47 @@ class RepositoryTests: XCTestCase {
         let filtered = Repository.local.houses(filteredBy: {$0.count == 3})
         XCTAssertEqual(filtered.count, 3)
 
-
+    }
+    
+//MARK: - SEASONS
+    func testLocalRepositorySeasonsCreation(){
+        let seasons = Repository.local.seasons
+        XCTAssertEqual(seasons.count, 2)
+        XCTAssertEqual(seasons.first, Repository.local.findSeason(number: 1))
+    }
+    
+    func testLocalRepositoryFilterByEpisode(){
+        let episode = Repository.local.findEpisode(episodeTitle: "GARDEN of Bones")
+        XCTAssertNotNil(episode)
+        XCTAssertEqual(episode?.number, 4)
+        XCTAssertEqual(episode?.title, "Garden of Bones")
+        
+        let nilEpisode = Repository.local.findEpisode(episodeTitle: "Sponje bob")
+        XCTAssertNil(nilEpisode)
+    }
+    
+    func testReturnsSortedSeasonsArray(){
+        XCTAssertEqual(Repository.local.seasons.first?.number, 1)
+        XCTAssertEqual(localseasons.sorted(), localseasons)
+    }
+    
+    func testReturnsSeasonByNumber(){
+        var seasonFound = Repository.local.findSeason(number: 2)
+        XCTAssertNotNil(seasonFound)
+        XCTAssertEqual(seasonFound?.count, 10)
+        
+        seasonFound = Repository.local.findSeason(number: 222)
+        XCTAssertNil(seasonFound)
+        
+    }
+    
+    func testSeasonFiltering(){
+        var filtered = Repository.local.seasons(filteredBy: {$0.count == 10})
+        XCTAssertEqual(filtered.count, 2)
+        
+        filtered = Repository.local.seasons(filteredBy: {$0.count == 15})
+        XCTAssertEqual(filtered.count, 0)
+        
     }
 
     

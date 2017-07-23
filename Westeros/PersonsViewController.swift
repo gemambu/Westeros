@@ -48,7 +48,7 @@ class PersonsViewController: UITableViewController {
         }
         
         // sincronizar House -> Cell
-        cell?.textLabel?.text = person.name
+        cell?.textLabel?.text = person.fullName
         
         return cell!
     }

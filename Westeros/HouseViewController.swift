@@ -54,6 +54,7 @@ class HouseViewController: UIViewController {
                                       style: .plain,
                                       target: self,
                                       action: #selector(displayPersons))
+        
         // Creamos un boton a la barra del navigationController
         let wiki = UIBarButtonItem(title: "Wiki",
                                    style: .plain,

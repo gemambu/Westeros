@@ -15,19 +15,27 @@ final class Repository {
 
 protocol HouseFactory {
     typealias Filter = (House)->Bool
+    typealias FilterSeason = (Season)->Bool
 
     
     var houses : [House] {get}
+    var seasons : [Season] {get}
+    
     func findHouse(name: String)->House?
     func houses(filteredBy: Filter)->[House]
     func findPerson(personName: String)->Person?
+    
+    func findSeason(number: Int)->Season?
+    func seasons(filteredBy: FilterSeason)->[Season]
+    func findEpisode(episodeTitle: String)->Episode?
 }
 
 final class LocalFactory : HouseFactory {
     
+    
+// MARK: - houses
     var houses: [House] {
         get {
-            // aquí es donde te creas tus casas
             
             let starkImage = #imageLiteral(resourceName: "codeIsComing.png")
             let lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
@@ -71,6 +79,7 @@ final class LocalFactory : HouseFactory {
 
             
         }
+        
     }
 
     public func findHouse(name: String)->House? {
@@ -85,14 +94,7 @@ final class LocalFactory : HouseFactory {
     
     public func findPerson(personName: String)->Person? {
         var person: Person?
-        
-        // How to fix this??
-//        return Repository.local.houses.filter {
-//            $0.getMembers().filter{
-//                $0.name.uppercased() == personName.uppercased()
-//            }.first
-//        }
-        
+    
         
         for house in houses {
             person = house.findPerson(name: personName)
@@ -103,5 +105,71 @@ final class LocalFactory : HouseFactory {
         
         return person
     }
+    
+    
+// MARK: - Seasons
+    
+    var seasons: [Season] {
+        get{
+            let episode1x01 = Episode(number: 1, title: "Winter Is Coming", summary: "This is the first chapter ever on GOT on season 01")
+            let episode1x02 = Episode(number: 2, title: "The Kingsroad", summary: "This is the second chapter  on GOT on season 01")
+            let episode1x03 = Episode(number: 3, title: "Lord Snow", summary: "This is the third chapter ever on GOT on season 01")
+            let episode1x04 = Episode(number: 4, title: "Cripples, Bastards, and Broken Things", summary: "This is the fourth chapter  on GOT on season 01")
+            let episode1x05 = Episode(number: 5, title: "The Wolf and the Lion", summary: "This is the fifth chapter ever on GOT on season 01")
+            let episode1x06 = Episode(number: 6, title: "A Golden Crown", summary: "This is the sixth chapter  on GOT on season 01")
+            let episode1x07 = Episode(number: 7, title: "You Win or You Die", summary: "This is the seventh chapter ever on GOT on season 01")
+            let episode1x08 = Episode(number: 8, title: "The Pointy End", summary: "This is the eighth chapter  on GOT on season 01")
+            let episode1x09 = Episode(number: 9, title: "Baelor", summary: "This is the ninth chapter ever on GOT on season 01")
+            let episode1x10 = Episode(number: 10, title: "Fire and Blood", summary: "This is the tenth chapter  on GOT on season 01")
+            
+            let season01 = Season(number: 1, initDate: "2011/04/17", finalDate: "2011/06/19")
+            
+            season01.addEpisode(episodes: episode1x01, episode1x02, episode1x03, episode1x04, episode1x05, episode1x06, episode1x07, episode1x08, episode1x09, episode1x10)
+            
+            let episode2x01 = Episode(number: 1, title: "The North Remembers", summary: "This is the first chapter ever on GOT on season 02")
+            let episode2x02 = Episode(number: 2, title: "The Night Lands", summary: "This is the second chapter ever on GOT on season 02")
+            let episode2x03 = Episode(number: 3, title: "What Is Dead May Never Die", summary: "This is the third chapter ever on GOT on season 02")
+            let episode2x04 = Episode(number: 4, title: "Garden of Bones", summary: "This is the fourth chapter ever on GOT on season 02")
+            let episode2x05 = Episode(number: 5, title: "The Ghost of Harrenhal", summary: "This is the fifth chapter ever on GOT on season 02")
+            let episode2x06 = Episode(number: 6, title: "The Old Gods and the New", summary: "This is the sixth chapter ever on GOT on season 02")
+            let episode2x07 = Episode(number: 7, title: "A Man Without Honor", summary: "This is the seventh chapter ever on GOT on season 02")
+            let episode2x08 = Episode(number: 8, title: "The Prince of Winterfell", summary: "This is the eighth chapter ever on GOT on season 02")
+            let episode2x09 = Episode(number: 9, title: "Blackwater", summary: "This is the nineth chapter ever on GOT on season 02")
+            let episode2x10 = Episode(number: 10, title: "Valar Morghulis", summary: "This is the tenth chapter ever on GOT on season 02")
+            
+            let season02 = Season(number: 2, initDate: "2012/04/01", finalDate: "2012/06/03")
+            
+            season02.addEpisode(episodes: episode2x01, episode2x02, episode2x03, episode2x04, episode2x05, episode2x06, episode2x07, episode2x08, episode2x09, episode2x10)
+     
+            return [season01, season02].sorted()
+        }
+    }
+
+    func findSeason(number: Int) -> Season? {
+        let seasonFound = seasons.filter {$0.number == number}.first
+        return seasonFound
+    }
+    
+
+    
+    func seasons(filteredBy: (Season) -> Bool) -> [Season] {
+        let filtered = seasons.filter(filteredBy)
+        return filtered
+
+    }
+    
+    func findEpisode(episodeTitle: String) -> Episode? {
+        var episode: Episode?
+        
+        for season in seasons {
+            episode = season.findEpisode(title: episodeTitle)
+            if (episode != nil){
+                break
+            }
+        }
+        
+        return episode
+    }
+
     
 }
