@@ -24,8 +24,12 @@ final class Season {
 }
 
 extension Season {
-    var proxy : String {
+    var proxyForEquatable : String {
         return "\(number) \(initDate) \(finalDate)"
+    }
+    
+    var proxyForComparison : Int {
+        return number
     }
 }
 
@@ -64,25 +68,25 @@ extension Season {
 
 extension Season: Equatable{
     static func ==(lhs: Season, rhs: Season) -> Bool {
-        return lhs.proxy == rhs.proxy
+        return lhs.proxyForEquatable == rhs.proxyForEquatable
     }
 }
 
 extension Season: Hashable{
     var hashValue: Int {
         get {
-            return proxy.hashValue
+            return proxyForEquatable.hashValue
         }
     }
 }
 
 extension Season: Comparable{
     static func <(lhs: Season, rhs: Season) -> Bool {
-        return lhs.proxy < rhs.proxy
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
     
     static func >(lhs: Season, rhs: Season) -> Bool {
-        return lhs.proxy > rhs.proxy
+        return lhs.proxyForComparison > rhs.proxyForComparison
     }
 }
 

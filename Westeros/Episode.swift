@@ -51,32 +51,36 @@ extension Episode {
 }
 
 extension Episode {
-    var proxy : String{
+    var proxyForEquatable : String {
         return "\(number) \(title)"
+    }
+    
+    var proxyForComparison : Int{
+        return number
     }
 }
 
 extension Episode : Equatable{
     static func ==(lhs: Episode, rhs: Episode) -> Bool {
-        return lhs.proxy == rhs.proxy
+        return lhs.proxyForEquatable == rhs.proxyForEquatable
     }
 }
 
 extension Episode : Hashable{
     var hashValue: Int {
         get {
-            return proxy.hashValue
+            return proxyForEquatable.hashValue
         }
     }
 }
 
 extension Episode : Comparable{
     static func <(lhs: Episode, rhs: Episode) -> Bool {
-        return lhs.proxy < rhs.proxy
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
     
     static func >(lhs: Episode, rhs: Episode) -> Bool {
-        return lhs.proxy > rhs.proxy
+        return lhs.proxyForComparison > rhs.proxyForComparison
     }
 
 }

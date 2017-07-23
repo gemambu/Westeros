@@ -55,6 +55,7 @@ class EpisodesTest: XCTestCase {
     func testAddCharacter(){
         let robb = Repository.local.findPerson(personName: "Robb")
         let cersei = Repository.local.findPerson(personName: "Cersei")
+    
         
         episode1x01.addMember(person: robb!)
         XCTAssertEqual(episode1x01.count, 1)

@@ -10,12 +10,15 @@ import UIKit
 
 final class Repository {
     
+   
     static let local = LocalFactory()
 }
 
 protocol HouseFactory {
     typealias Filter = (House)->Bool
     typealias FilterSeason = (Season)->Bool
+    
+    typealias Episodes = [Episode]
 
     
     var houses : [House] {get}
@@ -77,7 +80,6 @@ final class LocalFactory : HouseFactory {
 
             return [starkHouse, lannisterHouse, targaryenHouse].sorted()
 
-            
         }
         
     }
@@ -106,12 +108,27 @@ final class LocalFactory : HouseFactory {
         return person
     }
     
+    public func getAllPersons() -> [Person]{
+        var personList : [Person] = []
+        
+        for house in houses {
+            for person in house.sortedMembers(){
+                personList.append(person)
+            }
+        }
+        
+        return personList
+    }
+    
     
 // MARK: - Seasons
     
     var seasons: [Season] {
         get{
+            
+            
             let episode1x01 = Episode(number: 1, title: "Winter Is Coming", summary: "This is the first chapter ever on GOT on season 01")
+            
             let episode1x02 = Episode(number: 2, title: "The Kingsroad", summary: "This is the second chapter  on GOT on season 01")
             let episode1x03 = Episode(number: 3, title: "Lord Snow", summary: "This is the third chapter ever on GOT on season 01")
             let episode1x04 = Episode(number: 4, title: "Cripples, Bastards, and Broken Things", summary: "This is the fourth chapter  on GOT on season 01")
@@ -121,6 +138,11 @@ final class LocalFactory : HouseFactory {
             let episode1x08 = Episode(number: 8, title: "The Pointy End", summary: "This is the eighth chapter  on GOT on season 01")
             let episode1x09 = Episode(number: 9, title: "Baelor", summary: "This is the ninth chapter ever on GOT on season 01")
             let episode1x10 = Episode(number: 10, title: "Fire and Blood", summary: "This is the tenth chapter  on GOT on season 01")
+            
+            var episodesList = [episode1x01, episode1x02, episode1x03, episode1x04, episode1x05, episode1x06, episode1x07, episode1x08, episode1x09, episode1x10]
+            
+            addPersonsOnChapter(episodes: &episodesList)
+
             
             let season01 = Season(number: 1, initDate: "2011/04/17", finalDate: "2011/06/19")
             
@@ -140,11 +162,23 @@ final class LocalFactory : HouseFactory {
             let season02 = Season(number: 2, initDate: "2012/04/01", finalDate: "2012/06/03")
             
             season02.addEpisode(episodes: episode2x01, episode2x02, episode2x03, episode2x04, episode2x05, episode2x06, episode2x07, episode2x08, episode2x09, episode2x10)
+            
+            episodesList = [episode2x01, episode2x02, episode2x03, episode2x04, episode2x05, episode2x06, episode2x07, episode2x08, episode2x09, episode2x10]
+            
+            addPersonsOnChapter(episodes: &episodesList)
+            
+            let season03 = Season(number: 3, initDate: "2013/03/31", finalDate: "2013/06/09")
+            let season04 = Season(number: 4, initDate: "2014/04/06", finalDate: "2014/06/15")
+            let season05 = Season(number: 5, initDate: "2015/04/12", finalDate: "2014/06/14")
+            let season06 = Season(number: 6, initDate: "2016/04/24", finalDate: "2015/06/26")
+            let season07 = Season(number: 7, initDate: "2017/07/16", finalDate: "2012/08/27")
+
      
-            return [season01, season02].sorted()
+            return [season01, season02, season03, season04, season05, season06, season07].sorted()
         }
     }
 
+    
     func findSeason(number: Int) -> Season? {
         let seasonFound = seasons.filter {$0.number == number}.first
         return seasonFound
@@ -168,7 +202,19 @@ final class LocalFactory : HouseFactory {
             }
         }
         
-        return episode
+        return episode!
+    }
+    
+
+    func addPersonsOnChapter(episodes: inout Episodes){
+        let persons : [Person] = getAllPersons()
+        
+        for episode in episodes {
+            for person in persons {
+                episode.addMember(person: person)
+            }
+        }
+        
     }
 
     

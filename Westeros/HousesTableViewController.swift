@@ -17,7 +17,7 @@ class HousesTableViewController: UITableViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        title = "Westeros"
+        title = "Houses"
     }
     
     

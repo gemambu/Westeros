@@ -37,9 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // creamos la tabla
         let housesVC = HousesTableViewController(model: houses).wrappedInNavigation()
         
+        let seasons = Repository.local.seasons
+        let seasonsVC = SeasonsTableViewController(model: seasons).wrappedInNavigation()
+        
+        
+        let tabBarVC = UITabBarController()
+        tabBarVC.viewControllers = [housesVC, seasonsVC]
 
         //asignamos el rootVC
-        window?.rootViewController = housesVC
+        window?.rootViewController = tabBarVC
 
         
         return true
