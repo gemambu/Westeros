@@ -10,14 +10,19 @@ import UIKit
 
 class HousesTableViewController: UITableViewController {
         
-    let model : [House]
+    var model : [House]
+    let delegate : HousesControllerDelegate?
     
-    init(model: [House]){
+    init(model: [House], delegate: HousesControllerDelegate?){
         self.model = model
-        
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
         
         title = "Houses"
+    }
+    
+    convenience init(model: [House]){
+        self.init(model: model, delegate: nil)
     }
     
     
@@ -59,11 +64,19 @@ class HousesTableViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // obtenemos la casa seleccionada
-        let houseVC = HouseViewController(model: model[indexPath.row])
+        delegate?.housesViewController(vc: self, didSelectHouse: model[indexPath.row])
         
-        // mostramos la casa
-        navigationController?.pushViewController(houseVC, animated: true)
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            
+            let houseVC = HouseViewController(model: model[indexPath.row])
+            navigationController?.pushViewController(houseVC, animated: true)
+        }
+        
         
     }
+}
+
+//MARK: - Protocols
+protocol HousesControllerDelegate {
+    func housesViewController(vc: HousesTableViewController, didSelectHouse house: House)
 }

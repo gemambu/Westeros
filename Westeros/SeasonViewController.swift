@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SeasonViewController: UIViewController {
+class SeasonViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var sesionNumberLabel: UILabel!
     @IBOutlet weak var initDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     
-    let model : Season
+    var model : Season
     
     init(model: Season){
         self.model = model
@@ -30,8 +30,8 @@ class SeasonViewController: UIViewController {
   
     func syncViewWithModel(){
         sesionNumberLabel.text = "\(self.model.number)"
-        initDateLabel.text = self.model.initDate
-        endDateLabel.text = self.model.finalDate
+        initDateLabel.text = DateFormatter.dateToString(date: self.model.initDate)
+        endDateLabel.text = DateFormatter.dateToString(date: self.model.finalDate)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,4 +63,17 @@ class SeasonViewController: UIViewController {
     }
  
 
+}
+
+extension SeasonViewController:  SeasonsControllerDelegate {
+    func seasonsViewController(vc: SeasonsTableViewController, didSelectSeason season: Season){
+        model = season
+        
+        //Sincronizamos vista y model
+        viewWillAppear(true)
+        
+        syncViewWithModel()
+        
+        
+    }
 }

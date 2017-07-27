@@ -13,6 +13,8 @@ class EpisodeViewController: UIViewController {
    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryField: UITextView!
+    @IBOutlet weak var airDateField: UILabel!
+    @IBOutlet weak var sesionLabel: UILabel!
     
     let model : Episode
     
@@ -37,6 +39,8 @@ class EpisodeViewController: UIViewController {
         // model -> View
         titleLabel.text = model.title
         summaryField.text = model.summary
+        airDateField.text = "Air date: " + DateFormatter.dateToString(date: model.airDate)
+        sesionLabel.text = "Season: \(model.season.number)"
     }
     
     override func viewWillAppear(_ animated: Bool) {

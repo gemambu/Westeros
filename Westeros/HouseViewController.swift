@@ -16,7 +16,7 @@ class HouseViewController: UIViewController {
 
     @IBOutlet weak var sigilImageView: UIImageView!
     
-    let model : House
+    var model : House
     
     init(model: House){
         self.model = model
@@ -84,6 +84,18 @@ class HouseViewController: UIViewController {
         
     }
     
-
-
 }
+
+extension HouseViewController:  HousesControllerDelegate {
+    func housesViewController(vc: HousesTableViewController, didSelectHouse house: House){
+        model = house
+        
+        //Sincronizamos vista y model
+        viewWillAppear(true)
+        
+        syncViewWithModel()
+    }
+}
+
+
+

@@ -80,7 +80,7 @@ class RepositoryTests: XCTestCase {
 //MARK: - SEASONS
     func testLocalRepositorySeasonsCreation(){
         let seasons = Repository.local.seasons
-        XCTAssertEqual(seasons.count, 2)
+        XCTAssertEqual(seasons.count, 7)
         XCTAssertEqual(seasons.first, Repository.local.findSeason(number: 1))
     }
     

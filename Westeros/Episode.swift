@@ -14,14 +14,18 @@ final class Episode {
     
     let number: Int
     let title: String
+    let airDate: Date
     let summary: String
+    let season: Season
 
     private var _characters: Persons
     
-    init(number: Int, title: String, summary: String){
-        (self.number, self.title, self.summary) = (number, title, summary)
+    init(number: Int, title: String, airDate: Date, summary: String, season: Season){
+        (self.number, self.title, self.airDate, self.summary, self.season) = (number, title, airDate, summary, season)
         _characters = Persons()
+        self.season.addEpisode(episode: self)
     }
+    
 }
 
 extension Episode {
@@ -52,7 +56,8 @@ extension Episode {
 
 extension Episode {
     var proxyForEquatable : String {
-        return "\(number) \(title)"
+        let dateAir = DateFormatter.dateToString(date: airDate)
+        return "\(number) \(title) \(dateAir)"
     }
     
     var proxyForComparison : Int{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60CA09B1F2A652200062730 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CA09A1F2A652200062730 /* DateFormatter.swift */; };
 		B62117B61F1E81AC00C042EE /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117B41F1E81AC00C042EE /* WikiViewController.swift */; };
 		B62117B71F1E81AC00C042EE /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62117B51F1E81AC00C042EE /* WikiViewController.xib */; };
 		B62117BE1F1E972200C042EE /* HousesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117BC1F1E972200C042EE /* HousesTableViewController.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60CA09A1F2A652200062730 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		B62117B41F1E81AC00C042EE /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		B62117B51F1E81AC00C042EE /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		B62117BC1F1E972200C042EE /* HousesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesTableViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60CA09C1F2A655C00062730 /* Auxiliar */ = {
+			isa = PBXGroup;
+			children = (
+				B60CA09A1F2A652200062730 /* DateFormatter.swift */,
+			);
+			name = Auxiliar;
+			sourceTree = "<group>";
+		};
 		B62117CA1F211ED500C042EE /* Generics */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,10 +170,10 @@
 				B62117CA1F211ED500C042EE /* Generics */,
 				B6607DD91F14128A00D83FE1 /* HouseViewController.swift */,
 				B6607DDA1F14128A00D83FE1 /* HouseViewController.xib */,
-				B62117B41F1E81AC00C042EE /* WikiViewController.swift */,
-				B62117B51F1E81AC00C042EE /* WikiViewController.xib */,
 				B62117BC1F1E972200C042EE /* HousesTableViewController.swift */,
 				B62117BD1F1E972200C042EE /* HousesTableViewController.xib */,
+				B6BC75E61F25003A0060992E /* PersonViewController.swift */,
+				B6BC75E71F25003A0060992E /* PersonViewController.xib */,
 				B62117C01F1FD96E00C042EE /* PersonsViewController.swift */,
 				B62117C11F1FD96E00C042EE /* PersonsViewController.xib */,
 				B6BC75D61F24F2D50060992E /* SeasonViewController.swift */,
@@ -174,8 +184,8 @@
 				B6BC75DF1F24FA150060992E /* EpisodesTableViewController.xib */,
 				B6BC75E21F24FABD0060992E /* EpisodeViewController.swift */,
 				B6BC75E31F24FABD0060992E /* EpisodeViewController.xib */,
-				B6BC75E61F25003A0060992E /* PersonViewController.swift */,
-				B6BC75E71F25003A0060992E /* PersonViewController.xib */,
+				B62117B41F1E81AC00C042EE /* WikiViewController.swift */,
+				B62117B51F1E81AC00C042EE /* WikiViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +249,7 @@
 				B6607DDD1F1412A800D83FE1 /* Controllers */,
 				B6E464CF1F0EC87A00E0F89C /* Resources */,
 				B6E464CA1F0EC23F00E0F89C /* Models */,
+				B60CA09C1F2A655C00062730 /* Auxiliar */,
 			);
 			path = Westeros;
 			sourceTree = "<group>";
@@ -374,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60CA09B1F2A652200062730 /* DateFormatter.swift in Sources */,
 				B62117C91F211D5C00C042EE /* ArrayTableViewController.swift in Sources */,
 				B62117C51F1FF0A500C042EE /* ArrayDataSource.swift in Sources */,
 				B6BC75DC1F24F8B30060992E /* SeasonsTableViewController.swift in Sources */,

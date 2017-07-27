@@ -13,12 +13,18 @@ class SeasonsTableViewController: UITableViewController {
     
     let model : [Season]
     
-    init(model: [Season]){
+    let delegate : SeasonsControllerDelegate?
+    
+    init(model: [Season], delegate: SeasonsControllerDelegate?){
         self.model = model
-        
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
         
         title = "Seasons"
+    }
+    
+    convenience init(model: [Season]){
+        self.init(model: model, delegate: nil)
     }
     
     
@@ -59,11 +65,17 @@ class SeasonsTableViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // obtenemos la casa seleccionada
-        let seasonVC = SeasonViewController(model: model[indexPath.row])
+        delegate?.seasonsViewController(vc: self, didSelectSeason: model[indexPath.row])
         
-        // mostramos la casa
-        navigationController?.pushViewController(seasonVC, animated: true)
-        
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            
+            let seasonVC = SeasonViewController(model: model[indexPath.row])
+            navigationController?.pushViewController(seasonVC, animated: true)
+        } 
     }
+}
+
+//MARK: - Protocols
+protocol SeasonsControllerDelegate {
+    func seasonsViewController(vc: SeasonsTableViewController, didSelectSeason season: Season)
 }

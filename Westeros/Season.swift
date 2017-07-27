@@ -13,11 +13,11 @@ final class Season {
     typealias Episodes = Set<Episode>
     
     let number: Int
-    let initDate: String
-    let finalDate: String
+    let initDate: Date
+    let finalDate: Date
     private var _episodes: Episodes
     
-    init(number: Int, initDate: String, finalDate: String){
+    init(number: Int, initDate: Date, finalDate: Date){
         (self.number, self.initDate, self.finalDate) = (number, initDate, finalDate)
         _episodes = Episodes()
     }
@@ -25,13 +25,18 @@ final class Season {
 
 extension Season {
     var proxyForEquatable : String {
-        return "\(number) \(initDate) \(finalDate)"
+        let initDateString = DateFormatter.dateToString(date: initDate)
+        let finalDateString = DateFormatter.dateToString(date: finalDate)
+        
+        return "\(number) \(initDateString) \(finalDateString)"
     }
     
     var proxyForComparison : Int {
         return number
     }
 }
+
+
 
 extension Season {
     var count : Int {

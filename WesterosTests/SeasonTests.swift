@@ -19,11 +19,11 @@ class SeasonTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        season01 = Season(number: 1, initDate: "2011/04/17", finalDate: "2011/06/19")
-        season02 = Season(number: 2, initDate: "2012/04/01", finalDate: "2012/06/03")
+        season01 = Season(number: 1, initDate: DateFormatter.formatDate(date: "2011/04/17")!, finalDate: DateFormatter.formatDate(date: "2011/06/19")!)
+        season02 = Season(number: 2, initDate: DateFormatter.formatDate(date: "2012/04/01")!, finalDate: DateFormatter.formatDate(date: "2012/06/03")!)
 
-        episode1x01 = Episode(number: 1, title: "Winter Is Coming", summary: "This is the first chapter ever on GOT")
-        episode1x02 = Episode(number: 2, title: "The Kingsroad", summary: "This is the second chapter  on GOT")
+        episode1x01 = Episode(number: 1, title: "Winter Is Coming", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the first chapter ever on GOT", season: season01)
+        episode1x02 = Episode(number: 2, title: "The Kingsroad", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the second chapter  on GOT", season: season01)
 
     }
     
@@ -47,7 +47,7 @@ class SeasonTests: XCTestCase {
     }
     
     func testHashable(){
-        XCTAssertNotNil(season01.proxy)
+        XCTAssertNotNil(season01.proxyForEquatable)
     }
     
     func testAddEpisode(){

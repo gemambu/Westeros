@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.cyan
         
-        // creamos unos modelos
+        // creamos los modelos
         let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
 
         // creamos los controladores
 //        let dataSource = DataSources.houseDataSource(model: houses)
@@ -35,17 +36,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         // creamos la tabla
-        let housesVC = HousesTableViewController(model: houses).wrappedInNavigation()
+        let houseVC = HouseViewController(model: houses.first!)
+        let navHouse = UINavigationController(rootViewController: houseVC)
         
-        let seasons = Repository.local.seasons
-        let seasonsVC = SeasonsTableViewController(model: seasons).wrappedInNavigation()
+        let seasonVC = SeasonViewController(model: seasons.first!)
+        let navSeason = UINavigationController(rootViewController: seasonVC)
         
+       
+        var housesVC : UINavigationController?
+        var seasonsVC : UINavigationController?
         
+        // analizamos el dispositivo, para crear un SplitView en caso de usar ipad
+         // rawValue == 0: iphone. rawValue==1 ipad
+        if(UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            housesVC = HousesTableViewController(model: houses).wrappedInNavigation()
+            seasonsVC = SeasonsTableViewController(model: seasons).wrappedInNavigation()
+        } else{
+            housesVC = HousesTableViewController(model: houses, delegate: houseVC).wrappedInNavigation()
+            seasonsVC = SeasonsTableViewController(model: seasons, delegate: seasonVC).wrappedInNavigation()
+        }
+
+        // Se crea el Tab para Houses y Seasons
         let tabBarVC = UITabBarController()
-        tabBarVC.viewControllers = [housesVC, seasonsVC]
+        tabBarVC.viewControllers = [housesVC!, seasonsVC!]
+        
+        // Creamos el splitViewController
+        let splitVC = UISplitViewController()
+        
+        // añadimos el tabBar y por defecto, obtenemos el detalle de la primera casa
+        splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
 
         //asignamos el rootVC
-        window?.rootViewController = tabBarVC
+        window?.rootViewController = splitVC
 
         
         return true
