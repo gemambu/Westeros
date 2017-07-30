@@ -64,7 +64,7 @@ final class LocalFactory : HouseFactory {
             
             let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
             let cersei = Person(name: "Cersei", house: lannisterHouse)
-            let jaime = Person(name: "Jaime Lannister", alias: "Kingslayer", house: lannisterHouse)
+            let jaime = Person(name: "Jaime", alias: "Kingslayer", house: lannisterHouse)
             
             let daenerys = Person(name: "Daenerys", alias: "Mother of Dragons", house: targaryenHouse)
             let viserys = Person(name: "Viserys", alias: "The Young King" , house: targaryenHouse)

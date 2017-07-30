@@ -19,6 +19,7 @@ class ArrayTableViewController<Element>: UITableViewController {
         super.init(style: style)
         self.title = title
         
+        
         tableView.dataSource = self.dataSource
     }
     

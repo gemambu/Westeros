@@ -16,7 +16,7 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
     let model : Elements
     let _selectRow: SelectRow
     
-     public var navigationController: UINavigationController?
+    public var navigationController: UINavigationController?
     
     init(model : Elements, selectRow: @escaping SelectRow){
         self.model = model

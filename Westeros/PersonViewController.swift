@@ -21,7 +21,7 @@ class PersonViewController: UIViewController {
     init(model: Person){
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = self.model.name
+        //title = self.model.name
     }
     
     required init?(coder aDecoder: NSCoder) {

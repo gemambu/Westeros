@@ -64,15 +64,16 @@ class HousesTableViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        delegate?.housesViewController(vc: self, didSelectHouse: model[indexPath.row])
         
-        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
-            
-            let houseVC = HouseViewController(model: model[indexPath.row])
+        let houseVC = HouseViewController(model: model[indexPath.row])
+        
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0 || UIDevice.current.orientation == .portrait){
             navigationController?.pushViewController(houseVC, animated: true)
+        }else {
+            delegate?.housesViewController(vc: self, didSelectHouse: model[indexPath.row])
+            let navHouse = UINavigationController(rootViewController: houseVC)
+            navigationController?.showDetailViewController(navHouse, sender: self)
         }
-        
-        
     }
 }
 

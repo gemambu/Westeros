@@ -42,8 +42,10 @@ class HouseViewController: UIViewController {
         wordsView.text = model.words
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setupUI()
         syncViewWithModel()
     }
