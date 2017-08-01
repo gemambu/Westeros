@@ -79,7 +79,7 @@ class CharacterTest: XCTestCase {
         
         _ = Person(name: "Jaime Lannister", alias: "Kingslayer", house: lannisterHouse)
         XCTAssertEqual(starkHouse.count, 4)
-        XCTAssertEqual(lannisterHouse.count, 3)
+        XCTAssertEqual(lannisterHouse.count, 4)
     }
 
 }

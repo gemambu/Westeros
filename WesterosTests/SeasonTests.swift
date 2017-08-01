@@ -52,17 +52,17 @@ class SeasonTests: XCTestCase {
     
     func testAddEpisode(){
         season01.addEpisode(episode: episode1x01)
-        XCTAssertEqual(season01.count, 1)
+        XCTAssertEqual(season01.count, 2)
         
         season01.addEpisode(episode: episode1x01)
-        XCTAssertEqual(season01.count, 1)
+        XCTAssertEqual(season01.count, 2)
         
         season01.addEpisode(episode: episode1x02)
         XCTAssertEqual(season01.count, 2)
     }
     
     func testFindEpisode(){
-        var ep1x01 = season01.findEpisode(title: "Winter Is Coming")
+        var ep1x01 = season01.findEpisode(title: "Finter Is Coming")
         XCTAssertNil(ep1x01)
         
         season01.addEpisode(episode: episode1x01)

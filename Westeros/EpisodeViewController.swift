@@ -37,7 +37,7 @@ class EpisodeViewController: UIViewController {
     
     func syncViewWithModel(){
         // model -> View
-        titleLabel.text = model.title
+        titleLabel.text = "\(self.model.number) - \(model.title)"
         summaryField.text = model.summary
         airDateField.text = "Air date: " + DateFormatter.dateToString(date: model.airDate)
         sesionLabel.text = "Season: \(model.season.number)"

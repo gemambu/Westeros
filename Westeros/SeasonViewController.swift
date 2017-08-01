@@ -20,7 +20,7 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
         self.model = model
         super.init(nibName: nil, bundle: nil)
         
-        title = "Season \(self.model.number)"
+        title = "Season detail"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +29,7 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
     
   
     func syncViewWithModel(){
-        sesionNumberLabel.text = "\(self.model.number)"
+        sesionNumberLabel.text = "Season number: \(self.model.number)"
         initDateLabel.text = DateFormatter.dateToString(date: self.model.initDate)
         endDateLabel.text = DateFormatter.dateToString(date: self.model.finalDate)
     }

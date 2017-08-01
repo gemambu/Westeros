@@ -142,8 +142,7 @@ final class LocalFactory : HouseFactory {
             
             addPersonsOnChapter(episodes: &episodesList)
       
-//            season01.addEpisode(episodes: episode1x01, episode1x02, episode1x03, episode1x04, episode1x05, episode1x06, episode1x07, episode1x08, episode1x09, episode1x10)
-//            
+         
             let season02 = Season(number: 2, initDate: DateFormatter.formatDate(date: "2012/04/01")!, finalDate: DateFormatter.formatDate(date: "2012/06/03")!)
             
             let episode2x01 = Episode(number: 1, title: "The North Remembers", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the first chapter ever on GOT on season 02", season: season02)

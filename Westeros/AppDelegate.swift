@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // analizamos el dispositivo, para crear un SplitView en caso de usar ipad
         // rawValue == 0: iphone. rawValue==1 ipad
-        if(UIDevice.current.userInterfaceIdiom.rawValue == 0 || UIDevice.current.orientation == .portrait){
+        if(UIDevice.current.userInterfaceIdiom.rawValue == 0 ){
             housesVC = HousesTableViewController(model: houses).wrappedInNavigation()
             seasonsVC = SeasonsTableViewController(model: seasons).wrappedInNavigation()
         } else{
