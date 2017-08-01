@@ -14,7 +14,7 @@ class PersonViewController: UIViewController {
     @IBOutlet weak var fullNameLabel: UILabel!   
     @IBOutlet weak var aliasLabel: UILabel!
     @IBOutlet weak var houseNameLabel: UILabel!
-    @IBOutlet weak var sigilImage: UIImageView!
+//    @IBOutlet weak var sigilImage: UIImageView!
     
     let model : Person
     
@@ -32,8 +32,8 @@ class PersonViewController: UIViewController {
         self.nameLabel.text = model.name
         self.fullNameLabel.text = model.fullName
         self.aliasLabel.text = model.alias
-        self.houseNameLabel.text = model.house.name
-        self.sigilImage.image = model.house.sigil.image
+        self.houseNameLabel.text = "\(model.house.name) house"
+//        self.sigilImage.image = model.house.sigil.image
     }
     
     override func viewWillAppear(_ animated: Bool) {
