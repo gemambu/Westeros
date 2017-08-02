@@ -70,7 +70,7 @@ class SeasonsTableViewController: UITableViewController {
         let seasonVC = SeasonViewController(model: model[indexPath.row])
         
         
-        if (UIDevice.current.userInterfaceIdiom.rawValue == 0 || UIDevice.current.orientation == .portrait){
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
             navigationController?.pushViewController(seasonVC, animated: true)
         } else {
             delegate?.seasonsViewController(vc: self, didSelectSeason: model[indexPath.row])

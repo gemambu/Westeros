@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HouseViewController: UIViewController {
+class HouseViewController: UIViewController, UISplitViewControllerDelegate {
 
     @IBOutlet weak var houseNameView: UILabel!
     
@@ -34,8 +34,7 @@ class HouseViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
- 
+
   
     func syncViewWithModel(){
         // model -> View
@@ -50,6 +49,37 @@ class HouseViewController: UIViewController {
         
         setupUI()
         syncViewWithModel()
+        manageSplitButton()
+        
+    }
+    
+
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        manageSplitButton()
+    }
+    
+    
+    func manageSplitButton(){
+        
+        if UIDevice.current.userInterfaceIdiom.rawValue == 1 {
+            if UIDevice.current.orientation.isPortrait == true {
+                let listButton = UIBarButtonItem(title: "List",
+                                                 style: .plain,
+                                                 target: self,
+                                                 action: #selector(displayList))
+                navigationItem.leftBarButtonItem = listButton                
+            } else {
+                navigationItem.leftBarButtonItem = nil
+                self.splitViewController?.preferredDisplayMode = .automatic
+            }
+        }
+
+    }
+    
+    
+    @objc func displayList(){
+        self.splitViewController?.preferredDisplayMode = .primaryOverlay
     }
     
     func setupUI(){

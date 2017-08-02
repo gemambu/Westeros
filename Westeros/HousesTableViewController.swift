@@ -67,7 +67,7 @@ class HousesTableViewController: UITableViewController {
         
         let houseVC = HouseViewController(model: model[indexPath.row])
         
-        if (UIDevice.current.userInterfaceIdiom.rawValue == 0 || UIDevice.current.orientation == .portrait){
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
             navigationController?.pushViewController(houseVC, animated: true)
         }else {
             delegate?.housesViewController(vc: self, didSelectHouse: model[indexPath.row])
