@@ -26,8 +26,6 @@ class HouseViewController: UIViewController, UISplitViewControllerDelegate {
         // cuando se pulse por primera vez
         title = self.model.name
 
-        
-        
     }
     
     // chapuza de los de Cupertino (relacionada con los nil)
@@ -53,34 +51,10 @@ class HouseViewController: UIViewController, UISplitViewControllerDelegate {
         
     }
     
-
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         manageSplitButton()
     }
     
-    
-    func manageSplitButton(){
-        
-        if UIDevice.current.userInterfaceIdiom.rawValue == 1 {
-            if UIDevice.current.orientation.isPortrait == true {
-                let listButton = UIBarButtonItem(title: "List",
-                                                 style: .plain,
-                                                 target: self,
-                                                 action: #selector(displayList))
-                navigationItem.leftBarButtonItem = listButton                
-            } else {
-                navigationItem.leftBarButtonItem = nil
-                self.splitViewController?.preferredDisplayMode = .automatic
-            }
-        }
-
-    }
-    
-    
-    @objc func displayList(){
-        self.splitViewController?.preferredDisplayMode = .primaryOverlay
-    }
     
     func setupUI(){
         // Creamos el boton para los personajes

@@ -45,29 +45,6 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
         manageSplitButton()
     }
 
-    func manageSplitButton(){
-        
-        if UIDevice.current.userInterfaceIdiom.rawValue == 1 {
-            if UIDevice.current.orientation.isPortrait == true {
-                let listButton = UIBarButtonItem(title: "List",
-                                                 style: .plain,
-                                                 target: self,
-                                                 action: #selector(displayList))
-                navigationItem.leftBarButtonItem = listButton
-            } else {
-                navigationItem.leftBarButtonItem = nil
-                self.splitViewController?.preferredDisplayMode = .automatic
-            }
-        }
-        
-    }
-    
-    
-    @objc func displayList(){
-        self.splitViewController?.preferredDisplayMode = .primaryOverlay
-    }
-
-
     func setupUI(){
         // Creamos el boton para los capítulos
         let episodes = UIBarButtonItem(title: "Episodes",
@@ -86,7 +63,6 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
         let episodesVC = EpisodesTableViewController(model: model.sortedEpisodes(), season: model.number)
         
         navigationController?.pushViewController(episodesVC, animated: true)
-        
     }
  
 
