@@ -20,10 +20,12 @@ class EpisodesTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        var wikiURL = URL(string: "https://en.wikipedia.org/wiki/Winter_Is_Coming")!
+        
         season01 = Season(number: 1, initDate: DateFormatter.formatDate(date: "2011/04/17")!, finalDate: DateFormatter.formatDate(date: "2011/06/19")!)
         
-        episode1x01 = Episode(number: 1, title: "Winter Is Coming", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the first chapter ever on GOT", season: season01)
-        episode1x02 = Episode(number: 2, title: "The Kingsroad", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the second chapter  on GOT", season: season01)
+        episode1x01 = Episode(number: 1, title: "Winter Is Coming", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the first chapter ever on GOT", season: season01, wikiURL: wikiURL)
+        episode1x02 = Episode(number: 2, title: "The Kingsroad", airDate: DateFormatter.formatDate(date: "2012-04-01")!, summary: "This is the second chapter  on GOT", season: season01, wikiURL: wikiURL)
 
         
     }

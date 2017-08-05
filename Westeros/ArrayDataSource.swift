@@ -29,6 +29,15 @@ final class ArrayDataSource<Element> : NSObject, UITableViewDataSource{
         return _model.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func element(atIndexPath indexPath: IndexPath)->Element{
+        return _model[indexPath.row]
+    }
+
+    
     // Revisar bien esto para entenderlo!!!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let elt = _model[indexPath.row]

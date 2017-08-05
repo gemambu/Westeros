@@ -10,14 +10,23 @@ import UIKit
 
 class WikiViewController: UIViewController {
 
-    let model : House
+    //let model : House
+    
+    let titleView : String
+    let wikiURL : URL
     
     @IBOutlet weak var browserView: UIWebView!
     
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
-    init(model: House){
-        self.model = model
+//    init(model: House){
+//        self.model = model
+//        super.init(nibName:nil, bundle: nil)
+//    }
+    
+    init(titleView: String, wikiURL: URL){
+        self.titleView = titleView
+        self.wikiURL = wikiURL
         super.init(nibName:nil, bundle: nil)
     }
     
@@ -28,10 +37,10 @@ class WikiViewController: UIViewController {
     func syncViewWithModel(){
         activityView.isHidden = false
         activityView.startAnimating()
-        title = model.name
+        title = self.titleView
         // asignamos como delegado a sí mismo
         browserView.delegate = self
-        browserView.loadRequest(URLRequest(url: model.wikiURL))
+        browserView.loadRequest(URLRequest(url: self.wikiURL))
     }
     
     override func viewDidLoad() {

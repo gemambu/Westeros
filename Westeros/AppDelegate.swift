@@ -27,6 +27,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
         
+        /* MODELO GENERICO*/
+        // creamos los controladores
+        let dataSource = DataSources.houseDataSource(model: houses)
+        let housesDelegate = HousesDelegate()
+        let housesVC = ArrayTableViewController(dataSource: dataSource,
+                                                delegate: housesDelegate,
+                                                title: "Houses",
+                                                style: .plain).wrappedInNavigation()
+        
+        
+        
+        let seasonDataSource = DataSources.seasonDataSource(model: seasons)
+        let seasonsDelegate = SeasonsDelegate()
+        let seasonsVC = ArrayTableViewController(dataSource: seasonDataSource,
+                                                delegate: seasonsDelegate,
+                                                title: "Seasons",
+                                                style: .plain).wrappedInNavigation()
+        
+        // creamos la tabla
+//        let houseVC = HouseViewController(model: houses.first!)
+        let navHouse : UINavigationController = housesDelegate.getNavVC()
+        
+        let seasonVC = SeasonViewController(model: seasons.first!)
+        let navSeason = UINavigationController(rootViewController: seasonVC)
+
+        
+        // Se crea el Tab para Houses y Seasons
+        let tabBarVC = UITabBarController()
+        tabBarVC.viewControllers = [housesVC, seasonsVC]
+        
+//        // Creamos el splitViewController
+//        let splitVC = UISplitViewController()
+//        
+//        // añadimos el tabBar y por defecto, obtenemos el detalle de la primera casa
+//       splitVC.viewControllers = [tabBarVC, navHouse]
+//            //, navSeason]
+        
+        //asignamos el rootVC
+        window?.rootViewController = tabBarVC
+        
+        
+        /* MODELO ESPECIFICO
+        
         // creamos la tabla
         let houseVC = HouseViewController(model: houses.first!)
         let navHouse = UINavigationController(rootViewController: houseVC)
@@ -59,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
         
         //asignamos el rootVC
-        window?.rootViewController = splitVC
+        window?.rootViewController = splitVC*/
         
         
         return true

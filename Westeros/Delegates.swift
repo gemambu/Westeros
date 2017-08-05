@@ -7,55 +7,57 @@
 //
 
 import UIKit
-final class Delegates {
-    static func housesDelegate(model: [House]) -> ArrayTableViewDelegate<House> {
-        
-        return ArrayTableViewDelegate(model: model, selectRow: { (house: House, tableView: UITableView, navigationController: UINavigationController?) in
-            
-            let houseVC = HouseViewController(model: model.first!)
-            ////navigationController = UINavigationController(rootViewController: houseVC)
 
-
-            navigationController?.navigationController?.pushViewController(houseVC, animated: true)
-            
-        })
-        
-    }
-    
-    static func personsDelegate(model: [Person]) -> ArrayTableViewDelegate<Person> {
-        
-        return ArrayTableViewDelegate(model: model, selectRow: { (person: Person, tableView: UITableView, navigationController: UINavigationController?) in
-            
-            // La mostramos
-            let personVC = PersonViewController(model: person)
-            navigationController?.pushViewController(personVC, animated: true)
-            
-        })
-        
-    }
-    
-    static func seasonsDelegate(model: [Season]) -> ArrayTableViewDelegate<Season> {
-        
-        return ArrayTableViewDelegate(model: model, selectRow: { (season: Season, tableView: UITableView, navigationController: UINavigationController?) in
-            
-            // La mostramos
-            let modelVC = SeasonViewController(model: season)
-            navigationController?.pushViewController(modelVC, animated: true)
-            
-        })
-        
-    }
-    
-    static func episodesDelegate(model: [Episode]) -> ArrayTableViewDelegate<Episode> {
-        
-        return ArrayTableViewDelegate(model: model, selectRow: { (episode: Episode, tableView: UITableView, navigationController: UINavigationController?) in
-            
-            // La mostramos
-            let modelVC = EpisodeViewController(model: episode)
-            navigationController?.pushViewController(modelVC, animated: true)
-            
-        })
-        
-    }
-
+class BaseViewControllerDelegate<Element>: NSObject {
+    var dataSource : ArrayDataSource<Element>?
+    var viewController : UIViewController?
 }
+
+final class HousesDelegate:BaseViewControllerDelegate<House>, UITableViewDelegate{
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let house = dataSource?.element(atIndexPath: indexPath)
+        let houseVC = HouseViewController(model: house!)
+        
+ 
+        let navVC = viewController?.navigationController
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            navVC?.pushViewController(houseVC, animated: true)
+        }else {
+            //delegate?.housesViewController(vc: self, didSelectHouse: house)
+            let navHouse = UINavigationController(rootViewController: houseVC)
+            navVC?.showDetailViewController(navHouse, sender: self)
+        }
+    }
+    
+    public func getNavVC() -> UINavigationController {
+        return (viewController?.navigationController)!
+    }
+    
+    
+}
+
+final class SeasonsDelegate:BaseViewControllerDelegate<Season>, UITableViewDelegate{
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let season = dataSource?.element(atIndexPath: indexPath)
+        let seasonVC = SeasonViewController(model: season!)
+        
+        
+        let navVC = viewController?.navigationController
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            navVC?.pushViewController(seasonVC, animated: true)
+        }else {
+            //delegate?.housesViewController(vc: self, didSelectHouse: house)
+            let navHouse = UINavigationController(rootViewController: seasonVC)
+            navVC?.showDetailViewController(navHouse, sender: self)
+        }
+    }
+    
+    public func getNavVC() -> UINavigationController {
+        return (viewController?.navigationController)!
+    }
+    
+    
+}
+
+
+

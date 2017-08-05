@@ -78,7 +78,7 @@ class HouseViewController: UIViewController, UISplitViewControllerDelegate {
     @objc func displayWiki(){
         
         // Creamos un WikiVC 
-        let wikiVC = WikiViewController(model: model)
+        let wikiVC = WikiViewController(titleView: model.name, wikiURL: model.wikiURL)
         
         // lo cargamos en el navigation
         navigationController?.pushViewController(wikiVC, animated: true)

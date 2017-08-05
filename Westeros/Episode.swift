@@ -17,11 +17,12 @@ final class Episode {
     let airDate: Date
     let summary: String
     let season: Season
+    let wikiURL: URL
 
     private var _characters: Persons
     
-    init(number: Int, title: String, airDate: Date, summary: String, season: Season){
-        (self.number, self.title, self.airDate, self.summary, self.season) = (number, title, airDate, summary, season)
+    init(number: Int, title: String, airDate: Date, summary: String, season: Season, wikiURL: URL){
+        (self.number, self.title, self.airDate, self.summary, self.season, self.wikiURL) = (number, title, airDate, summary, season, wikiURL)
         _characters = Persons()
         self.season.addEpisode(episode: self)
     }

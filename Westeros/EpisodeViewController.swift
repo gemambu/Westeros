@@ -14,7 +14,7 @@ class EpisodeViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryField: UITextView!
     @IBOutlet weak var airDateField: UILabel!
-    @IBOutlet weak var sesionLabel: UILabel!
+    @IBOutlet weak var wikiButton: UIButton!
     
     let model : Episode
     
@@ -25,8 +25,6 @@ class EpisodeViewController: UIViewController {
         // asignamos el titulo en el init para que se cargue al arrancar y no
         // cuando se pulse por primera vez
         title = "Episode \(self.model.number)"
-        
-        
         
     }
     
@@ -40,12 +38,35 @@ class EpisodeViewController: UIViewController {
         titleLabel.text = "\(self.model.number) - \(model.title)"
         summaryField.text = model.summary
         airDateField.text = "Air date: " + DateFormatter.dateToString(date: model.airDate)
-        sesionLabel.text = "Season: \(model.season.number)"
+
     }
+    
+    func setupSummaryView(){
+        self.summaryField.layer.borderColor =  UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
+        self.summaryField.layer.borderWidth = 1.0
+        self.summaryField.layer.cornerRadius = 8
+        self.summaryField.isEditable = false
+        self.summaryField.isScrollEnabled = true
+        
+        self.wikiButton.addTarget(self, action:  #selector(displayWiki), for:.touchDown)
+    }
+    
+    
+    @objc func displayWiki(){
+        
+        // Creamos un WikiVC
+        let wikiVC = WikiViewController(titleView: model.title, wikiURL: model.wikiURL)
+        
+        // lo cargamos en el navigation
+        navigationController?.pushViewController(wikiVC, animated: true)
+        
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
+        setupSummaryView()
         syncViewWithModel()
     }
     

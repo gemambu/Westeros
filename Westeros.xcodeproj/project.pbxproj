@@ -18,9 +18,10 @@
 		B62117C71F1FF4D600C042EE /* ArrayDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117C61F1FF4D600C042EE /* ArrayDataSourceTests.swift */; };
 		B62117C91F211D5C00C042EE /* ArrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117C81F211D5C00C042EE /* ArrayTableViewController.swift */; };
 		B62117CC1F211EF600C042EE /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117CB1F211EF600C042EE /* DataSources.swift */; };
-		B62117CE1F21239D00C042EE /* ArrayTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117CD1F21239D00C042EE /* ArrayTableViewDelegate.swift */; };
 		B62117D21F21248200C042EE /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117D11F21248200C042EE /* Delegates.swift */; };
 		B6558FC11F3337E000E9615F /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558FC01F3337E000E9615F /* DetailedViewController.swift */; };
+		B6558FC31F33409F00E9615F /* RepositoryEpisodeSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558FC21F33409F00E9615F /* RepositoryEpisodeSummaries.swift */; };
+		B6558FC51F3348F100E9615F /* EpisodeSummaries.json in Resources */ = {isa = PBXBuildFile; fileRef = B6558FC41F3348F100E9615F /* EpisodeSummaries.json */; };
 		B6607DDB1F14128A00D83FE1 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6607DD91F14128A00D83FE1 /* HouseViewController.swift */; };
 		B6607DDC1F14128A00D83FE1 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6607DDA1F14128A00D83FE1 /* HouseViewController.xib */; };
 		B6607DE01F155D9D00D83FE1 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6607DDF1F155D9C00D83FE1 /* UIKitExtensions.swift */; };
@@ -74,9 +75,10 @@
 		B62117C61F1FF4D600C042EE /* ArrayDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceTests.swift; sourceTree = "<group>"; };
 		B62117C81F211D5C00C042EE /* ArrayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewController.swift; sourceTree = "<group>"; };
 		B62117CB1F211EF600C042EE /* DataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
-		B62117CD1F21239D00C042EE /* ArrayTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewDelegate.swift; sourceTree = "<group>"; };
 		B62117D11F21248200C042EE /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		B6558FC01F3337E000E9615F /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		B6558FC21F33409F00E9615F /* RepositoryEpisodeSummaries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryEpisodeSummaries.swift; sourceTree = "<group>"; };
+		B6558FC41F3348F100E9615F /* EpisodeSummaries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EpisodeSummaries.json; sourceTree = "<group>"; };
 		B6607DD91F14128A00D83FE1 /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		B6607DDA1F14128A00D83FE1 /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 		B6607DDF1F155D9C00D83FE1 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -144,7 +146,6 @@
 				B62117D01F21244D00C042EE /* Delegates */,
 				B62117CF1F21244100C042EE /* DataSources */,
 				B62117C81F211D5C00C042EE /* ArrayTableViewController.swift */,
-				B62117CD1F21239D00C042EE /* ArrayTableViewDelegate.swift */,
 				B62117C41F1FF0A500C042EE /* ArrayDataSource.swift */,
 			);
 			name = Generics;
@@ -209,6 +210,7 @@
 				B6E464C81F0EC23800E0F89C /* House.swift */,
 				B6E464D21F0ECDA800E0F89C /* Person.swift */,
 				B6607DE31F15621D00D83FE1 /* Repository.swift */,
+				B6558FC21F33409F00E9615F /* RepositoryEpisodeSummaries.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -219,6 +221,7 @@
 				B6863B291F1BCED80039A286 /* targaryen.jpg */,
 				B6E464CB1F0EC87500E0F89C /* codeIsComing.png */,
 				B6E464CC1F0EC87500E0F89C /* lannister.jpg */,
+				B6558FC41F3348F100E9615F /* EpisodeSummaries.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E464CE1F0EC87500E0F89C /* lannister.jpg in Resources */,
+				B6558FC51F3348F100E9615F /* EpisodeSummaries.json in Resources */,
 				B62117B71F1E81AC00C042EE /* WikiViewController.xib in Resources */,
 				B6863B2A1F1BCED80039A286 /* targaryen.jpg in Resources */,
 				B6E464CD1F0EC87500E0F89C /* codeIsComing.png in Resources */,
@@ -393,13 +397,13 @@
 				B62117C51F1FF0A500C042EE /* ArrayDataSource.swift in Sources */,
 				B6BC75DC1F24F8B30060992E /* SeasonsTableViewController.swift in Sources */,
 				B62117D21F21248200C042EE /* Delegates.swift in Sources */,
-				B62117CE1F21239D00C042EE /* ArrayTableViewDelegate.swift in Sources */,
 				B62117C21F1FD96E00C042EE /* PersonsViewController.swift in Sources */,
 				B62117BE1F1E972200C042EE /* HousesTableViewController.swift in Sources */,
 				B6607DE41F15621D00D83FE1 /* Repository.swift in Sources */,
 				B6BC75CF1F24A76A0060992E /* Season.swift in Sources */,
 				B6607DDB1F14128A00D83FE1 /* HouseViewController.swift in Sources */,
 				B6E464D31F0ECDA800E0F89C /* Person.swift in Sources */,
+				B6558FC31F33409F00E9615F /* RepositoryEpisodeSummaries.swift in Sources */,
 				B6607DE01F155D9D00D83FE1 /* UIKitExtensions.swift in Sources */,
 				B6BC75E01F24FA160060992E /* EpisodesTableViewController.swift in Sources */,
 				B6BC75E81F25003A0060992E /* PersonViewController.swift in Sources */,
