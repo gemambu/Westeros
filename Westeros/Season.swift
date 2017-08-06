@@ -15,10 +15,12 @@ final class Season {
     let number: Int
     let initDate: Date
     let finalDate: Date
+    let summary: String
+    let wikiURL: URL
     private var _episodes: Episodes
     
-    init(number: Int, initDate: Date, finalDate: Date){
-        (self.number, self.initDate, self.finalDate) = (number, initDate, finalDate)
+    init(number: Int, initDate: Date, finalDate: Date, wikiURL: URL, summary: String){
+        (self.number, self.initDate, self.finalDate, self.wikiURL, self.summary) = (number, initDate, finalDate, wikiURL, summary)
         _episodes = Episodes()
     }
 }

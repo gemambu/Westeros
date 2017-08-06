@@ -21,18 +21,36 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-fs-aot">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-Cd-Qko" userLabel="browserSV">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </webView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7bh-eg-c0Y">
+                    <subviews>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-fs-aot">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </webView>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0fs-Tb-pfg" userLabel="activitySC">
                     <rect key="frame" x="169" y="315" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="color" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                </activityIndicatorView>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7bh-eg-c0Y">
+                            <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                            <color key="color" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UY1-Cd-Qko" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7yK-wh-Neq"/>
+                <constraint firstItem="UY1-Cd-Qko" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NDS-vU-c5b"/>
+                <constraint firstItem="UY1-Cd-Qko" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pq0-ea-toW"/>
+                <constraint firstItem="UY1-Cd-Qko" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eIg-df-Kin"/>
+                <constraint firstItem="0fs-Tb-pfg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fka-bf-VSY"/>
+                <constraint firstAttribute="bottom" secondItem="UY1-Cd-Qko" secondAttribute="bottom" id="mAD-w0-tez"/>
+                <constraint firstAttribute="trailing" secondItem="UY1-Cd-Qko" secondAttribute="trailing" id="qyL-w8-nMO"/>
+                <constraint firstItem="0fs-Tb-pfg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rxu-XC-Lp2"/>
+            </constraints>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>

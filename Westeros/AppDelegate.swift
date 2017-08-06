@@ -47,11 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // creamos la tabla
 //        let houseVC = HouseViewController(model: houses.first!)
-        let navHouse : UINavigationController = housesDelegate.getNavVC()
-        
-        let seasonVC = SeasonViewController(model: seasons.first!)
-        let navSeason = UINavigationController(rootViewController: seasonVC)
-
+//        let navHouse : UINavigationController = housesDelegate.getNavVC()
+//        
+//        let seasonVC = SeasonViewController(model: seasons.first!)
+//        let navSeason = UINavigationController(rootViewController: seasonVC)
+//
         
         // Se crea el Tab para Houses y Seasons
         let tabBarVC = UITabBarController()

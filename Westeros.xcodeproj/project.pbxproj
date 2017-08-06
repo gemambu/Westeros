@@ -20,8 +20,8 @@
 		B62117CC1F211EF600C042EE /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117CB1F211EF600C042EE /* DataSources.swift */; };
 		B62117D21F21248200C042EE /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62117D11F21248200C042EE /* Delegates.swift */; };
 		B6558FC11F3337E000E9615F /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558FC01F3337E000E9615F /* DetailedViewController.swift */; };
-		B6558FC31F33409F00E9615F /* RepositoryEpisodeSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558FC21F33409F00E9615F /* RepositoryEpisodeSummaries.swift */; };
 		B6558FC51F3348F100E9615F /* EpisodeSummaries.json in Resources */ = {isa = PBXBuildFile; fileRef = B6558FC41F3348F100E9615F /* EpisodeSummaries.json */; };
+		B6558FC71F3643A600E9615F /* RepositoryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558FC61F3643A600E9615F /* RepositoryUtil.swift */; };
 		B6607DDB1F14128A00D83FE1 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6607DD91F14128A00D83FE1 /* HouseViewController.swift */; };
 		B6607DDC1F14128A00D83FE1 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6607DDA1F14128A00D83FE1 /* HouseViewController.xib */; };
 		B6607DE01F155D9D00D83FE1 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6607DDF1F155D9C00D83FE1 /* UIKitExtensions.swift */; };
@@ -77,8 +77,8 @@
 		B62117CB1F211EF600C042EE /* DataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
 		B62117D11F21248200C042EE /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		B6558FC01F3337E000E9615F /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
-		B6558FC21F33409F00E9615F /* RepositoryEpisodeSummaries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryEpisodeSummaries.swift; sourceTree = "<group>"; };
 		B6558FC41F3348F100E9615F /* EpisodeSummaries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EpisodeSummaries.json; sourceTree = "<group>"; };
+		B6558FC61F3643A600E9615F /* RepositoryUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryUtil.swift; sourceTree = "<group>"; };
 		B6607DD91F14128A00D83FE1 /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		B6607DDA1F14128A00D83FE1 /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 		B6607DDF1F155D9C00D83FE1 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -136,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B60CA09A1F2A652200062730 /* DateFormatter.swift */,
+				B6558FC61F3643A600E9615F /* RepositoryUtil.swift */,
 			);
 			name = Auxiliar;
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 				B6E464C81F0EC23800E0F89C /* House.swift */,
 				B6E464D21F0ECDA800E0F89C /* Person.swift */,
 				B6607DE31F15621D00D83FE1 /* Repository.swift */,
-				B6558FC21F33409F00E9615F /* RepositoryEpisodeSummaries.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -403,12 +403,12 @@
 				B6BC75CF1F24A76A0060992E /* Season.swift in Sources */,
 				B6607DDB1F14128A00D83FE1 /* HouseViewController.swift in Sources */,
 				B6E464D31F0ECDA800E0F89C /* Person.swift in Sources */,
-				B6558FC31F33409F00E9615F /* RepositoryEpisodeSummaries.swift in Sources */,
 				B6607DE01F155D9D00D83FE1 /* UIKitExtensions.swift in Sources */,
 				B6BC75E01F24FA160060992E /* EpisodesTableViewController.swift in Sources */,
 				B6BC75E81F25003A0060992E /* PersonViewController.swift in Sources */,
 				B6E464C91F0EC23800E0F89C /* House.swift in Sources */,
 				B6558FC11F3337E000E9615F /* DetailedViewController.swift in Sources */,
+				B6558FC71F3643A600E9615F /* RepositoryUtil.swift in Sources */,
 				B6BC75E41F24FABD0060992E /* EpisodeViewController.swift in Sources */,
 				ED853EE81F0C47E100F04AD6 /* AppDelegate.swift in Sources */,
 				B62117CC1F211EF600C042EE /* DataSources.swift in Sources */,

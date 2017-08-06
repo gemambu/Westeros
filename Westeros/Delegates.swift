@@ -47,12 +47,12 @@ final class SeasonsDelegate:BaseViewControllerDelegate<Season>, UITableViewDeleg
             navVC?.pushViewController(seasonVC, animated: true)
         }else {
             //delegate?.housesViewController(vc: self, didSelectHouse: house)
-            let navHouse = UINavigationController(rootViewController: seasonVC)
-            navVC?.showDetailViewController(navHouse, sender: self)
+            let navSeason = UINavigationController(rootViewController: seasonVC)
+            navVC?.showDetailViewController(navSeason, sender: self)
         }
     }
     
-    public func getNavVC() -> UINavigationController {
+    public func getSeasonVC() -> UINavigationController {
         return (viewController?.navigationController)!
     }
     

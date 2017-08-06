@@ -118,9 +118,9 @@ class RepositoryTests: XCTestCase {
         
     }
 
-//    func testRepositorySummaries() {
-//        let summary = Repository.local.getSummary(episode: 101)
-//        XCTAssertNotNil(summary)
-//
-//    }
+    func testRepositorySummaries() {
+        let summary = Repository.local.getSummary(episode: 101)
+        XCTAssertNotNil(summary)
+
+    }
 }

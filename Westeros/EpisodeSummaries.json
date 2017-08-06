@@ -1,15 +1,122 @@
-[
+ [
   {
-    "episode": {
-        "number": "101",
-        "summary": "this is the summary for chapter 101"
-    }
+		"number": "101",
+		"summary": "A Night's Watch deserter is tracked down outside of Winterfell, prompting swift justice from Lord Eddard Ned Stark, and raising concerns about the dangers in the lawless lands north of the Wall. Returning home, Ned learns from his wife Catelyn that his mentor, Jon Arryn, has died in the Westeros's capital of King's Landing, and that King Robert is on his way north to offer Ned the position as the King's Hand.\n Meanwhile, across the Narrow Sea in Pentos, Viserys Targaryen hatches a plan to win back the throne by forging an allegiance with the nomadic Dothraki warriors by giving its leader, Khal Drogo, his lovely sister Daenerys's hand in marriage.\n Robert arrives at Winterfell with his wife, Queen Cersei, and other members of the Lannister family: her twin brother Jaime, dwarf brother Tyrion, and Cersei's son and heir to the throne, 12-year-old Joffrey. Unable to refuse his old friend and king, Ned prepares to leave for King's Landing, as Jon Snow decides to travel north to Castle Black to join the Night's Watch, accompanied by a curious Tyrion. But a startling act of treachery directed at young Bran may end up postponing their respective departures."
   },
   {
-    "episode": {
-        "number": "102",
-        "summary": "this is the summary for chapter 102"
-    }
+		"number": "102",
+		"summary": "Bran's fate remains in doubt. Having agreed to become the King's Hand, Ned leaves the North with daughters Sansa and Arya, while Catelyn stays behind to tend to Bran. Jon Snow heads north to join the brotherhood of the Night's Watch. Tyrion decides to forgo the trip south with his family, instead joining Jon in the entourage heading to the Wall. Viserys bides his time in hopes of winning back the throne, while Dany focuses her attention on learning how to please her new husband, Drogo. "
+  },
+  {
+		"number": "103",
+		"summary": "Arriving at King's Landing after his long journey, Ned is shocked to learn of the Crown's profligacy from his new advisors. At Castle Black, Jon Snow impresses Tyrion at the expense of greener recruits. Suspicious the Lannisters had a hand in Bran's fall, Catelyn covertly follows her husband to King's Landing, where she is intercepted by Petyr Baelish, a.k.a. \"Littlefinger,\" a shrewd longtime ally and brothel owner. Cersei and Jaime ponder the implications of Bran's recovery; Arya studies swordsmanship. On the road to Vaes Dothrak, Daenerys finds herself at odds with Viserys. "
+  },
+  {
+		"number": "104",
+		"summary": "Ned looks to a book for clues to the death of his predecessor, and uncovers one of King Robert's bastards. Robert and his guests witness a tournament honoring Ned. Jon takes measures to protect Sam from further abuse at Castle Black; a frustrated Viserys clashes with Daenerys in Vaes Dothrak; Sansa imagines her future as a queen, while Arya envisions a far different future. Catelyn rallies her husband's allies to make a point, while Tyrion finds himself caught in the wrong place at the wrong time. "
+  },
+  {
+		"number": "105",
+		"summary": "Incensed over news of Daenerys's alliance with the Dothraki, Robert orders a preemptive strike on the Targaryens that drives a wedge in his relationship with Ned. A captive Tyrion helps Catelyn, but receives a cold reception at the Eyrie from her sister, Jon Arryn's widow Lysa. Sansa is charmed by the dashing Ser Loras Tyrell, a.k.a. the Knight of Flowers. Arya overhears a plot against her father. "
+  },
+  {
+		"number": "106",
+		"summary": "Reinstated as the Hand, Ned sits for the King while Robert is on a hunt. Ned issues a decree that could have long-term consequences throughout the Seven Kingdoms. At the Eyrie, Tyrion confesses to his \"crimes,\" and demands that Lysa give him a trial by combat. Joffrey apologizes to Sansa; Viserys receives from Drogo his final payment for Daenerys. "
+  },
+  {
+		"number": "107",
+		"summary": "Explaining that the future of the Lannisters is at stake, Tywin presses Jaime to \"be the man you were meant to be\" as they prepare for battle. Ned confronts Cersei about the secrets that killed Jon Arryn. With the fate of the missing Benjen very much on his mind, Jon takes his Night's Watch vows, though not with the assignment he coveted. After Ser Jorah saves Daenerys from treachery, an enraged Drogo vows to lead the Dothraki where they've never gone before. An injured Robert takes pains to ensure an orderly transition at King's Landing. "
+  },
+  {
+		"number": "108",
+		"summary": "In the aftermath of Ned's capture, Syrio and Arya face off against Lannister guards while Cersei manipulates Sansa to her own ends. Robb rallies his father's northern allies against Tywin Lannister and heads south to war. Tyrion forms an uneasy alliance with the hill tribes and reunites with his father. Jon lashes out at Thorne and battles a mysterious attacker from beyond the Wall. Dany is forced to reconcile her desire to conquer Westeros with Drogo's savagery after the Dothraki raid a peaceful village. "
+  },
+  {
+		"number": "109",
+		"summary": "With Sansa's life in danger, Ned makes a fateful decision. Catelyn brokers an unsavory deal with the slippery Walder Frey. Tyrion acquires a mistress and is forced by his father to fight on the front lines. Robb wins his first major victory and captures a prized prisoner. Jon is rewarded for his valor and discovers a dark secret about Maester Aemon. As Drogo's wound festers, Dany defies Qotho and puts her trust in the enslaved witch Mirri Maz Duur. "
+  },
+  {
+		"number": "110",
+		"summary": "As tragic news spreads across the Seven Kingdoms, Bran and Rickon share a prophetic dream, Catelyn interrogates Jaime about her son's fall, and Robb's destiny is forever changed. After a surprising decision by his father, Tyrion heads south. Meanwhile, Arya assumes a new identity in an attempt to escape King's Landing, and Sansa is terrorized by Joffrey. At the Wall, Jon is forced to choose between the Night's Watch and the family he left behind. Across the sea, Dany pays a terrible price for her love, but finds new hope. "
+  },
+  {
+        "number": "201",
+        "summary": "As Robb Stark and his northern army continue the war against the Lannisters, Tyrion arrives in King's Landing to counsel Joffrey and temper the young king's excesses. On the island of Dragonstone, Stannis Baratheon plots an invasion to claim his late brother's throne, allying himself with the fiery Melisandre, a strange priestess of a stranger god. Across the sea, Daenerys, her three young dragons, and khalasar trek through the Red Waste in search of allies, or water. In the North, Bran presides over a threadbare Winterfell while, beyond the Wall, Jon Snow and the Night's Watch must shelter with a devious wildling. "
+  },
+  {
+        "number": "202",
+        "summary": "In the wake of a bloody purge in the capital, Tyrion chastens Cersei for alienating the king's subjects. On the road north, Arya shares a secret with a Night's Watch recruit named Gendry. With supplies dwindling, one of Dany's scouts returns with news of their position. After nine years as a Stark ward, Theon Greyjoy reunites with his father Balon and sister Yara, who want to restore the ancient Kingdom of the Iron Islands. Davos enlists Salladhor Saan, a pirate, to join forces with Stannis and Melisandre for a naval invasion of King's Landing. "
+  },
+  {
+        "number": "203",
+        "summary": "At the Red Keep, Tyrion plots three alliances through the promise of marriage. Catelyn arrives in the Stormlands to forge an alliance of her own. But King Renly, his new wife Margaery, and her brother Loras Tyrell have other plans in mind. Balon Greyjoy maps out his strategy of attack while, at Winterfell, Luwin tries to decipher Bran's dreams. "
+  },
+  {
+        "number": "204",
+        "summary": "Joffrey punishes Sansa for Robb's victories while Tyrion and Bronn scramble to temper the king's cruelty. Catelyn entreats Stannis and Renly to forego their ambitions and unite against the Lannisters. Dany and her exhausted khalasar arrive at the gates of Qarth, a prosperous city with strong walls and rulers who greet her outside them. Tyrion coerces a queen's man into being his eyes and ears. Arya and Gendry are taken to Harrenhal, where their lives rest in the hands of The Mountain, Gregor Clegane. Davos must revert to his old ways and smuggle Melisandre into a secret cove. "
+  },
+  {
+        "number": "205",
+        "summary": "The end of the Baratheon rivalry drives Catelyn to flee and Littlefinger to act. At King's Landing, Tyrion's source alerts him to Joffrey's flawed defense plan and a mysterious secret weapon. Theon sails to the Stony Shore to prove he's worthy to be called Ironborn. In Harrenhal, Arya receives a promise from Jaqen H'ghar, one of three prisoners she saved from the Gold Cloaks. The Night's Watch arrive at the Fist of the First Men, an ancient fortress where they hope to stem the advance of the wildling army. "
+  },
+  {
+        "number": "206",
+        "summary": "Theon completes his master stroke. In King's Landing, the Lannisters send Myrcella from harm's way in the nick of time. Arya comes face to face with a surprise visitor; Dany vows to take what is hers; Robb and Catelyn receive crucial news; Qhorin gives Jon a chance to prove himself. "
+  },
+  {
+        "number": "207",
+        "summary": "Jaime meets a distant relative; Dany receives an invitation to the House of the Undying; Theon leads a search party; Jon loses his way in the wilderness; Cersei counsels Sansa. "
+  },
+  {
+        "number": "208",
+        "summary": "At Winterfell, Theon receives a visitor and holds down the fort. Arya calls in her final debt with Jaqen in a way that displeases him. Robb is betrayed. Tyrion and Varys find common ground. Dany ignores Jorah's advice. Stannis and Davos approach their destination, and Davos is offered a reward. "
+  },
+  {
+        "number": "209",
+        "summary": "Tyrion and the Lannisters fight for their lives as Stannis' fleet assaults King's Landing. "
+  },
+  {
+        "number": "210",
+        "summary": "Tyrion awakens to a changed situation. King Joffrey doles out rewards to his subjects. As Theon stirs his men to action, Luwin offers some final advice. Brienne silences Jaime; Arya receives a gift from Jaqen; Dany goes to a strange place; Jon proves himself to Qhorin. "
+  },
+  {
+        "number": "301",
+        "summary": "Jon is brought before Mance Rayder, the King Beyond the Wall, while the Night's Watch survivors retreat south. In King's Landing, Tyrion asks for his reward, Littlefinger offers Sansa a way out, and Cersei hosts a dinner for the royal family. Dany sails into Slaver's Bay. "
+  },
+  {
+        "number": "302",
+        "summary": "Sansa says too much. Shae asks Tyrion for a favor. Jaime finds a way to pass the time. Arya runs into the Brotherhood Without Banners. "
+  },
+  {
+        "number": "401",
+        "summary": "Tyrion welcomes a guest to King's Landing while at Castle Black, Jon Snow finds himself unwelcome. Dany is pointed to Meereen, the mother of all slave cities. Arya runs into an old friend. "
+  },
+  {
+        "number": "402",
+        "summary": "Tyrion lends Jaime a hand. Joffrey and Margaery host a breakfast. At Dragonstone, Stannis loses patience with Davos. Ramsay finds a purpose for his pet. North of the Wall, Bran sees where they must go. "
+  },
+  {
+        "number": "501",
+        "summary": "Cersei and Jaime adjust to a world without Tywin. Varys reveals a conspiracy to Tyrion. Dany faces a new threat to her rule. Jon is caught between two kings. "
+  },
+  {
+        "number": "502",
+        "summary": "Arya arrives in Braavos. Pod and Brienne run into trouble on the road. Cersei fears for her daughter's safety in Dorne as Ellaria Sand seeks revenge for Oberyn's death. Stannis tempts Jon. An adviser tempts Dany. "
+  },
+  {
+        "number": "601",
+        "summary": "At Castle Black, Thorne defends his treason while Edd and Davos defend themselves. Sansa and Theon race the cold and the hounds. "
+  },
+  {
+        "number": "602",
+        "summary": "Bran trains with the Three-Eyed Raven. In King's Landing, Jaime advises Tommen. Tyrion demands good news, but has to make his own. At Castle Black, the Night's Watch stands behind Thorne. Ramsay Bolton proposes a plan, and Balon Greyjoy entertains other proposals. "
+  },
+  {
+        "number": "701",
+        "summary": "Jon organizes the defense of the North. Cersei tries to even the odds. Samwell discovers crucial information. Daenerys comes home. "
+  },
+  {
+        "number": "702",
+        "summary": "Daenerys receives an unexpected visitor. Jon faces a revolt. Sam risks his career and life. Tyrion plans the conquest of Westeros. "
   }
-]
-  
+  ]
