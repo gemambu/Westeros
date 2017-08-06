@@ -10,7 +10,8 @@ import Foundation
 
 final class Person {
     let name: String
-    let house : House
+    let house: House
+    let character: String
     // Variable de instancia
     private let _alias: String?
     
@@ -23,13 +24,13 @@ final class Person {
         }
     }
     
-    init(name: String, alias: String?, house: House){
-        (self.name, _alias, self.house) = (name, alias, house)
+    init(name: String, alias: String?, house: House, character: String){
+        (self.name, _alias, self.house, self.character) = (name, alias, house, character)
         self.house.addPerson(person: self)
     }
     
-    convenience init(name: String, house: House) {
-        self.init(name: name, alias: nil, house: house);
+    convenience init(name: String, house: House, character: String) {
+        self.init(name: name, alias: nil, house: house, character: character);
     }
 }
 

@@ -10,6 +10,7 @@ import UIKit
 
 let episodeJSON = "EpisodeSummaries"
 let seasonJSON = "SeasonSummaries"
+let personJSON = "PersonCharacters"
 
 class Repository {
    
@@ -62,17 +63,16 @@ final class LocalFactory : HouseFactory {
             let targaryenURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
             let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire and blood", url: targaryenURL)
             
-            let ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
-            let robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
-            let arya = Person(name: "Arya", house: starkHouse)
+            let ned = Person(name: "Eddard", alias: "Ned", house: starkHouse, character: getSummary(fullname: "Eddard Stark", type: personJSON))
+            let robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse, character: getSummary(fullname: "Robb Stark", type: personJSON))
+            let arya = Person(name: "Arya", house: starkHouse, character: getSummary(fullname: "Arya Stark", type: personJSON))
             
-            let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
-            let cersei = Person(name: "Cersei", house: lannisterHouse)
-            let jaime = Person(name: "Jaime", alias: "Kingslayer", house: lannisterHouse)
+            let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse, character: getSummary(fullname: "Tyrion Lannister", type: personJSON))
+            let cersei = Person(name: "Cersei", house: lannisterHouse, character: getSummary(fullname: "Cersei Lannister", type: personJSON))
+            let jaime = Person(name: "Jaime", alias: "Kingslayer", house: lannisterHouse, character: getSummary(fullname: "Jaime Lannister", type: personJSON))
             
-            let daenerys = Person(name: "Daenerys", alias: "Mother of Dragons", house: targaryenHouse)
-            let viserys = Person(name: "Viserys", alias: "The Young King" , house: targaryenHouse)
-            let rhaegar = Person(name: "Rhaegar", alias: "The Last Dragon" , house: targaryenHouse)
+            let daenerys = Person(name: "Daenerys", alias: "Mother of Dragons", house: targaryenHouse, character: getSummary(fullname: "Daenerys Targaryen", type: personJSON))
+            let viserys = Person(name: "Viserys", alias: "The Young King" , house: targaryenHouse, character: getSummary(fullname: "Viserys Targaryen", type: personJSON))
             
             
             // añadir los personajes a las casas
@@ -80,7 +80,7 @@ final class LocalFactory : HouseFactory {
             
             lannisterHouse.addPerson(persons: tyrion, cersei, jaime)
             
-            targaryenHouse.addPerson(persons: daenerys, viserys, rhaegar)
+            targaryenHouse.addPerson(persons: daenerys, viserys)
 
             return [starkHouse, lannisterHouse, targaryenHouse].sorted()
 
