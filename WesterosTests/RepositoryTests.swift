@@ -119,7 +119,7 @@ class RepositoryTests: XCTestCase {
     }
 
     func testRepositorySummaries() {
-        let summary = Repository.local.getSummary(episode: 101)
+        let summary = getSummary(number: 101, type: "EpisodeSummaries")
         XCTAssertNotNil(summary)
 
     }

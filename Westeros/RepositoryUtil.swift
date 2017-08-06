@@ -13,20 +13,22 @@ typealias JSONDictionary = [String: JSONObject]
 typealias JSONArray = [JSONDictionary]
 
     
-   func getSummary(episode: Int)-> String{
-        let json = getJSON() as! JSONArray
+func getSummary(number: Int, type: String)-> String{
+        let json = getJSON(fileName: type) as! JSONArray
         
         let ep = json.filter { (jsonObj) -> Bool in
-            return jsonObj["number"] as! String  == "\(episode)"
+            return jsonObj["number"] as! String  == "\(number)"
         }
         return ep[0]["summary"] as! String
         
     }
     
-    func getJSON() -> Any{
+func getJSON(fileName: String) -> Any{
         var json: JSONArray?
+
+    
         do {
-            if let file = Bundle.main.url(forResource: "EpisodeSummaries", withExtension: "json") {
+            if let file = Bundle.main.url(forResource: fileName, withExtension: "json") {
                 let data = try Data(contentsOf: file)
                 json = try (JSONSerialization.jsonObject(with: data, options: []) as! JSONArray)
                 
