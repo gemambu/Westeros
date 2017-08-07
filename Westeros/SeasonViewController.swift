@@ -40,19 +40,9 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
-        setupSummaryView()
+        setupSummaryView(summaryField: self.summaryField)
         syncViewWithModel()
         manageSplitButton()
-    }
-    
-    func setupSummaryView(){
-        self.summaryField.layer.borderColor =  UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
-        self.summaryField.layer.borderWidth = 1.0
-        self.summaryField.layer.cornerRadius = 8
-        self.summaryField.isEditable = false
-        self.summaryField.isScrollEnabled = true
-        
-        self.wikiButton.addTarget(self, action:  #selector(displayWiki), for:.touchDown)
     }
     
     @objc func displayWiki(){
@@ -80,6 +70,8 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
         
         let rightButton : UIBarButtonItem = episodes
         navigationItem.rightBarButtonItem = rightButton
+        
+        self.wikiButton.addTarget(self, action:  #selector(displayWiki), for:.touchDown)
         
     }
 

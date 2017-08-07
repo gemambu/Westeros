@@ -11,15 +11,28 @@ import UIKit
 class BaseViewControllerDelegate<Element>: NSObject {
     var dataSource : ArrayDataSource<Element>?
     var viewController : UIViewController?
+    var navVC : UINavigationController?
+    
+    func getNavVC()->UINavigationController{
+        return navVC!
+    }
 }
 
 final class HousesDelegate:BaseViewControllerDelegate<House>, UITableViewDelegate{
+    
+    init(model: House){
+        super.init()
+        let initHouseVC = HouseViewController(model: model)
+        navVC = UINavigationController()
+        navVC?.pushViewController(initHouseVC, animated: true)
+    }
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let house = dataSource?.element(atIndexPath: indexPath)
         let houseVC = HouseViewController(model: house!)
         
  
-        let navVC = viewController?.navigationController
+        navVC = viewController?.navigationController
         if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
             navVC?.pushViewController(houseVC, animated: true)
         }else {
@@ -29,14 +42,17 @@ final class HousesDelegate:BaseViewControllerDelegate<House>, UITableViewDelegat
         }
     }
     
-    public func getNavVC() -> UINavigationController {
-        return (viewController?.navigationController)!
-    }
-    
-    
 }
 
 final class SeasonsDelegate:BaseViewControllerDelegate<Season>, UITableViewDelegate{
+    
+    init(model: Season){
+        super.init()
+        let initSeasonVC = SeasonViewController(model: model)
+        navVC = UINavigationController()
+        navVC?.pushViewController(initSeasonVC, animated: true)
+    }
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let season = dataSource?.element(atIndexPath: indexPath)
         let seasonVC = SeasonViewController(model: season!)
@@ -51,12 +67,7 @@ final class SeasonsDelegate:BaseViewControllerDelegate<Season>, UITableViewDeleg
             navVC?.showDetailViewController(navSeason, sender: self)
         }
     }
-    
-    public func getSeasonVC() -> UINavigationController {
-        return (viewController?.navigationController)!
-    }
-    
-    
+
 }
 
 

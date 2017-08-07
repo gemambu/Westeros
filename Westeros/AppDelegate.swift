@@ -28,9 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seasons = Repository.local.seasons
         
         /* MODELO GENERICO*/
+        
         // creamos los controladores
         let dataSource = DataSources.houseDataSource(model: houses)
-        let housesDelegate = HousesDelegate()
+        let housesDelegate = HousesDelegate(model: houses.first!)
         let housesVC = ArrayTableViewController(dataSource: dataSource,
                                                 delegate: housesDelegate,
                                                 title: "Houses",
@@ -39,75 +40,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let seasonDataSource = DataSources.seasonDataSource(model: seasons)
-        let seasonsDelegate = SeasonsDelegate()
+        let seasonsDelegate = SeasonsDelegate(model: seasons.first!)
         let seasonsVC = ArrayTableViewController(dataSource: seasonDataSource,
                                                 delegate: seasonsDelegate,
                                                 title: "Seasons",
                                                 style: .plain).wrappedInNavigation()
         
         // creamos la tabla
-//        let houseVC = HouseViewController(model: houses.first!)
-//        let navHouse : UINavigationController = housesDelegate.getNavVC()
-//        
-//        let seasonVC = SeasonViewController(model: seasons.first!)
-//        let navSeason = UINavigationController(rootViewController: seasonVC)
-//
+        //let houseVC = HouseViewController(model: houses.first!)
+        let navHouse = housesDelegate.getNavVC()
+        
+        //let seasonVC = SeasonViewController(model: seasons.first!)
+        let navSeason : UINavigationController = seasonsDelegate.getNavVC()
+
         
         // Se crea el Tab para Houses y Seasons
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [housesVC, seasonsVC]
         
-//        // Creamos el splitViewController
-//        let splitVC = UISplitViewController()
-//        
-//        // añadimos el tabBar y por defecto, obtenemos el detalle de la primera casa
-//       splitVC.viewControllers = [tabBarVC, navHouse]
-//            //, navSeason]
+        //setTabBarAppearance()
         
-        //asignamos el rootVC
-        window?.rootViewController = tabBarVC
-        
-        
-        /* MODELO ESPECIFICO
-        
-        // creamos la tabla
-        let houseVC = HouseViewController(model: houses.first!)
-        let navHouse = UINavigationController(rootViewController: houseVC)
-        
-        let seasonVC = SeasonViewController(model: seasons.first!)
-        let navSeason = UINavigationController(rootViewController: seasonVC)
-        
-        
-        var housesVC : UINavigationController?
-        var seasonsVC : UINavigationController?
-        
-        // analizamos el dispositivo, para crear un SplitView en caso de usar ipad
-        // rawValue == 0: iphone. rawValue==1 ipad
-        if(UIDevice.current.userInterfaceIdiom.rawValue == 0 ){
-            housesVC = HousesTableViewController(model: houses).wrappedInNavigation()
-            seasonsVC = SeasonsTableViewController(model: seasons).wrappedInNavigation()
-        } else{
-            housesVC = HousesTableViewController(model: houses, delegate: houseVC).wrappedInNavigation()
-            seasonsVC = SeasonsTableViewController(model: seasons, delegate: seasonVC).wrappedInNavigation()
-        }
-    
-        // Se crea el Tab para Houses y Seasons
-        let tabBarVC = UITabBarController()
-        tabBarVC.viewControllers = [housesVC!, seasonsVC!]
         
         // Creamos el splitViewController
         let splitVC = UISplitViewController()
         
         // añadimos el tabBar y por defecto, obtenemos el detalle de la primera casa
-        splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
+       splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
         
         //asignamos el rootVC
-        window?.rootViewController = splitVC*/
+        window?.rootViewController = splitVC
         
         
         return true
     }
     
+//    func setTabBarAppearance(){
+//        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 15)!], for: .normal)
+//        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -15)
+//    }
+//    
 
     
     func applicationWillResignActive(_ application: UIApplication) {
