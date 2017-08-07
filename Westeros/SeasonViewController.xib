@@ -92,16 +92,16 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rgW-Wi-gBq" userLabel="wikiSV">
-                    <rect key="frame" x="172" y="226" width="30" height="40"/>
+                    <rect key="frame" x="172" y="226" width="30" height="0.0"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3q-R2-iQw">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="0.0"/>
                             <state key="normal" title="Wiki"/>
                         </button>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qY5-Tr-v5C" userLabel="summaryVC">
-                    <rect key="frame" x="20" y="286" width="335" height="361"/>
+                    <rect key="frame" x="20" y="246" width="335" height="361"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QVf-3B-ZOC" userLabel="summary">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="361"/>
@@ -117,7 +117,7 @@
             <constraints>
                 <constraint firstItem="3pT-Oo-Ibr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="3XC-F0-XV5"/>
                 <constraint firstItem="qY5-Tr-v5C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="4Ic-Ev-6Et"/>
-                <constraint firstAttribute="bottom" secondItem="qY5-Tr-v5C" secondAttribute="bottom" constant="20" id="4xL-8k-QHj"/>
+                <constraint firstAttribute="bottom" secondItem="qY5-Tr-v5C" secondAttribute="bottom" priority="750" constant="60" id="4xL-8k-QHj"/>
                 <constraint firstAttribute="bottom" secondItem="a9x-dh-NS6" secondAttribute="bottom" priority="250" constant="380" id="8xJ-J0-Qv3"/>
                 <constraint firstItem="a9x-dh-NS6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Hyb-Vf-Fv1"/>
                 <constraint firstItem="3pT-Oo-Ibr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="JXG-UK-Ul3"/>
