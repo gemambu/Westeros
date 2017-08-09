@@ -94,16 +94,18 @@ class HouseViewController: UIViewController, UISplitViewControllerDelegate {
     
 }
 
-extension HouseViewController:  HousesControllerDelegate {
-    func housesViewController(vc: HousesTableViewController, didSelectHouse house: House){
-        model = house
-        
-        //Sincronizamos vista y model
-        viewWillAppear(true)
-        
-        syncViewWithModel()
-    }
-}
+// MARK: - Extension for detailed HousesControllerDelegate. Now, working with Generics
+//
+//extension HouseViewController:  HousesControllerDelegate {
+//    func housesViewController(vc: HousesTableViewController, didSelectHouse house: House){
+//        model = house
+//        
+//        //Sincronizamos vista y model
+//        viewWillAppear(true)
+//        
+//        syncViewWithModel()
+//    }
+//}
 
 
 

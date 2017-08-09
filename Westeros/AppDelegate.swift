@@ -46,26 +46,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 title: "Seasons",
                                                 style: .plain).wrappedInNavigation()
         
-        // creamos la tabla
-        //let houseVC = HouseViewController(model: houses.first!)
+        // creamos los NavigatiobnController para houses y seasons
         let navHouse = housesDelegate.getNavVC()
-        
-        //let seasonVC = SeasonViewController(model: seasons.first!)
         let navSeason : UINavigationController = seasonsDelegate.getNavVC()
 
-        
         // Se crea el Tab para Houses y Seasons
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [housesVC, seasonsVC]
         
-        //setTabBarAppearance()
-        
+        // Aplicamos estilo al TabBar
+        setTabBarAppearance()
         
         // Creamos el splitViewController
         let splitVC = UISplitViewController()
         
         // añadimos el tabBar y por defecto, obtenemos el detalle de la primera casa
-       splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
+        splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
         
         //asignamos el rootVC
         window?.rootViewController = splitVC
@@ -74,13 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-//    func setTabBarAppearance(){
-//        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 15)!], for: .normal)
-//        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -15)
-//    }
-//    
 
-    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

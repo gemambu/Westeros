@@ -28,10 +28,10 @@ class CharacterTest: XCTestCase {
         lannisterHouse = Repository.local.findHouse(name: "Lannister")
         
         
-        ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
-        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
-        arya = Person(name: "Arya", house: starkHouse)
-        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        ned = Person(name: "Eddard", alias: "Ned", house: starkHouse, character: "")
+        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse, character: "")
+        arya = Person(name: "Arya", house: starkHouse, character: "")
+        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse, character: "")
 
     }
     
@@ -44,7 +44,7 @@ class CharacterTest: XCTestCase {
         
         XCTAssertNotNil(ned)
         
-        let samsa = Person(name: "Samsa", house: starkHouse)
+        let samsa = Person(name: "Samsa", house: starkHouse, character: "")
         XCTAssertNotNil(samsa)
     }
     
@@ -58,7 +58,7 @@ class CharacterTest: XCTestCase {
         XCTAssertEqual(ned, ned)
         
         // Igualdad
-        let ned2 = Person(name: "Eddard", alias: "Ned", house: starkHouse)
+        let ned2 = Person(name: "Eddard", alias: "Ned", house: starkHouse, character: "")
         XCTAssertEqual(ned, ned2)
         
         // Desigualdad
@@ -71,13 +71,13 @@ class CharacterTest: XCTestCase {
     }
     
     func testCreatePerson(){
-        _ = Person(name: "Samsa", house: starkHouse)
+        _ = Person(name: "Samsa", house: starkHouse, character: "")
         XCTAssertEqual(starkHouse.count, 4)
         
-        _ = Person(name: "Samsa", house: starkHouse)
+        _ = Person(name: "Samsa", house: starkHouse, character: "")
         XCTAssertEqual(starkHouse.count, 4)
         
-        _ = Person(name: "Jaime Lannister", alias: "Kingslayer", house: lannisterHouse)
+        _ = Person(name: "Jaime Lannister", alias: "Kingslayer", house: lannisterHouse, character: "")
         XCTAssertEqual(starkHouse.count, 4)
         XCTAssertEqual(lannisterHouse.count, 4)
     }

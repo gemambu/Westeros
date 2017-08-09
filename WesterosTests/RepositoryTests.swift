@@ -73,7 +73,7 @@ class RepositoryTests: XCTestCase {
     
     func testHouseFiltering(){
         let filtered = Repository.local.houses(filteredBy: {$0.count == 3})
-        XCTAssertEqual(filtered.count, 3)
+        XCTAssertEqual(filtered.count, 2)
 
     }
     
@@ -118,9 +118,4 @@ class RepositoryTests: XCTestCase {
         
     }
 
-    func testRepositorySummaries() {
-        let summary = getSummary(number: 101, type: "EpisodeSummaries")
-        XCTAssertNotNil(summary)
-
-    }
 }

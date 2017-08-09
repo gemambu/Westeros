@@ -9,8 +9,6 @@
 import UIKit
 
 class WikiViewController: UIViewController {
-
-    //let model : House
     
     let titleView : String
     let wikiURL : URL
@@ -19,10 +17,6 @@ class WikiViewController: UIViewController {
     
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
-//    init(model: House){
-//        self.model = model
-//        super.init(nibName:nil, bundle: nil)
-//    }
     
     init(titleView: String, wikiURL: URL){
         self.titleView = titleView

@@ -14,7 +14,6 @@ class PersonViewController: UIViewController {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var aliasLabel: UILabel!
     @IBOutlet weak var characterLabel: UITextView!
-//    @IBOutlet weak var sigilImage: UIImageView!
     
     let model : Person
     
@@ -39,7 +38,6 @@ class PersonViewController: UIViewController {
         self.fullNameLabel.text = model.fullName
         self.aliasLabel.text = model.alias
         self.characterLabel.text = model.character
-//        self.sigilImage.image = model.house.sigil.image
     }
     
     

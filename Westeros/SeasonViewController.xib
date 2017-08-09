@@ -24,10 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3pT-Oo-Ibr" userLabel="sesionSV">
-                    <rect key="frame" x="100" y="85" width="175" height="20.5"/>
+                <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3pT-Oo-Ibr" userLabel="seasonSV">
+                    <rect key="frame" x="100" y="65" width="175" height="20.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo6-4t-bYF" userLabel="SesionNumber">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo6-4t-bYF" userLabel="SesionNumber">
                             <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,7 +36,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="8qH-rg-5qd" userLabel="initInfo">
-                    <rect key="frame" x="108.5" y="145.5" width="158.5" height="20.5"/>
+                    <rect key="frame" x="108.5" y="100.5" width="158.5" height="20.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Iq-Bz-3Kg" userLabel="initSV">
                             <rect key="frame" x="0.0" y="0.0" width="68.5" height="20.5"/>
@@ -64,7 +64,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a9x-dh-NS6" userLabel="endInfo">
-                    <rect key="frame" x="107.5" y="186" width="161" height="20.5"/>
+                    <rect key="frame" x="107.5" y="136" width="161" height="20.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-wt-B5p" userLabel="endSV">
                             <rect key="frame" x="0.0" y="0.0" width="74.5" height="20.5"/>
@@ -91,11 +91,11 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rgW-Wi-gBq" userLabel="wikiSV">
-                    <rect key="frame" x="172" y="226" width="30" height="0.0"/>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgW-Wi-gBq" userLabel="wikiSV">
+                    <rect key="frame" x="172" y="196" width="30" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3q-R2-iQw">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="0.0"/>
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                             <state key="normal" title="Wiki"/>
                         </button>
                     </subviews>
@@ -115,18 +115,18 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="3pT-Oo-Ibr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="3XC-F0-XV5"/>
+                <constraint firstItem="3pT-Oo-Ibr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="65" id="3XC-F0-XV5"/>
                 <constraint firstItem="qY5-Tr-v5C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="4Ic-Ev-6Et"/>
                 <constraint firstAttribute="bottom" secondItem="qY5-Tr-v5C" secondAttribute="bottom" priority="750" constant="60" id="4xL-8k-QHj"/>
-                <constraint firstAttribute="bottom" secondItem="a9x-dh-NS6" secondAttribute="bottom" priority="250" constant="380" id="8xJ-J0-Qv3"/>
+                <constraint firstItem="qY5-Tr-v5C" firstAttribute="top" secondItem="rgW-Wi-gBq" secondAttribute="bottom" priority="249" constant="10" id="BCx-Ik-TyK"/>
                 <constraint firstItem="a9x-dh-NS6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Hyb-Vf-Fv1"/>
                 <constraint firstItem="3pT-Oo-Ibr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="JXG-UK-Ul3"/>
                 <constraint firstItem="rgW-Wi-gBq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mkz-vD-ct7"/>
-                <constraint firstItem="a9x-dh-NS6" firstAttribute="top" secondItem="8qH-rg-5qd" secondAttribute="bottom" constant="20" id="X0c-rd-YG9"/>
-                <constraint firstItem="QVf-3B-ZOC" firstAttribute="top" secondItem="P3q-R2-iQw" secondAttribute="bottom" constant="20" id="eJe-Q0-tqW"/>
+                <constraint firstItem="a9x-dh-NS6" firstAttribute="top" secondItem="8qH-rg-5qd" secondAttribute="bottom" constant="15" id="X0c-rd-YG9"/>
+                <constraint firstItem="QVf-3B-ZOC" firstAttribute="top" secondItem="P3q-R2-iQw" secondAttribute="bottom" priority="250" constant="20" id="eJe-Q0-tqW"/>
                 <constraint firstItem="3pT-Oo-Ibr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hCT-Qm-ib2"/>
-                <constraint firstItem="rgW-Wi-gBq" firstAttribute="top" secondItem="a9x-dh-NS6" secondAttribute="bottom" constant="19.5" id="kIt-o6-rMo"/>
-                <constraint firstItem="8qH-rg-5qd" firstAttribute="top" secondItem="3pT-Oo-Ibr" secondAttribute="bottom" priority="750" constant="40" id="nXD-2l-Z5T"/>
+                <constraint firstItem="rgW-Wi-gBq" firstAttribute="top" secondItem="a9x-dh-NS6" secondAttribute="bottom" priority="249" constant="10" id="kIt-o6-rMo"/>
+                <constraint firstItem="8qH-rg-5qd" firstAttribute="top" secondItem="3pT-Oo-Ibr" secondAttribute="bottom" priority="750" constant="15" id="nXD-2l-Z5T"/>
                 <constraint firstItem="8qH-rg-5qd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tU3-V3-ew0"/>
                 <constraint firstAttribute="trailing" secondItem="qY5-Tr-v5C" secondAttribute="trailing" constant="20" id="woV-Yc-SjJ"/>
                 <constraint firstAttribute="trailing" secondItem="3pT-Oo-Ibr" secondAttribute="trailing" constant="100" id="xlm-K3-OZI"/>

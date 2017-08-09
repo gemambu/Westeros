@@ -35,7 +35,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BuI-w6-Qfw" userLabel="dateSV">
-                    <rect key="frame" x="155" y="105" width="64.5" height="20.5"/>
+                    <rect key="frame" x="155" y="100" width="64.5" height="20.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOp-N4-fyp" userLabel="airDateValue">
                             <rect key="frame" x="0.0" y="0.0" width="64.5" height="20.5"/>
@@ -47,10 +47,10 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7wC-tc-gDc" userLabel="season">
-                    <rect key="frame" x="100" y="140.5" width="175" height="3.5"/>
+                    <rect key="frame" x="100" y="135.5" width="175" height="13.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-7H-30s">
-                            <rect key="frame" x="0.0" y="0.0" width="175" height="3.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="175" height="13.5"/>
                             <state key="normal" title="Wiki info"/>
                         </button>
                     </subviews>
@@ -74,7 +74,7 @@
                 <constraint firstItem="7wC-tc-gDc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CTy-na-2G6"/>
                 <constraint firstItem="7wC-tc-gDc" firstAttribute="top" secondItem="BuI-w6-Qfw" secondAttribute="bottom" constant="15" id="EdC-SU-YMH"/>
                 <constraint firstItem="FFW-eS-IlL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="Im8-6h-9sH"/>
-                <constraint firstItem="BuI-w6-Qfw" firstAttribute="top" secondItem="FFW-eS-IlL" secondAttribute="bottom" constant="30" id="Uyn-xW-vNp"/>
+                <constraint firstItem="BuI-w6-Qfw" firstAttribute="top" secondItem="FFW-eS-IlL" secondAttribute="bottom" constant="25" id="Uyn-xW-vNp"/>
                 <constraint firstItem="FFW-eS-IlL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" priority="250" constant="100" id="WAu-aX-pIW"/>
                 <constraint firstItem="7wC-tc-gDc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="ZbD-lu-HkR"/>
                 <constraint firstAttribute="bottom" secondItem="dNj-Zy-o8F" secondAttribute="bottom" priority="750" constant="60" id="eQO-aI-ekC"/>
@@ -85,7 +85,7 @@
                 <constraint firstItem="BuI-w6-Qfw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oHB-OJ-E1k"/>
                 <constraint firstItem="BuI-w6-Qfw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" priority="250" constant="155" id="rOF-Nb-DLz"/>
                 <constraint firstItem="FFW-eS-IlL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tVp-Ba-mMR"/>
-                <constraint firstItem="dNj-Zy-o8F" firstAttribute="top" secondItem="7wC-tc-gDc" secondAttribute="bottom" constant="20" id="xg9-Fp-f09"/>
+                <constraint firstItem="dNj-Zy-o8F" firstAttribute="top" secondItem="7wC-tc-gDc" secondAttribute="bottom" constant="15" id="xg9-Fp-f09"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

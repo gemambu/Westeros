@@ -39,9 +39,9 @@ class HouseTests: XCTestCase {
         starkHouse = Repository.local.findHouse(name: "Stark")
         lannisterHouse = Repository.local.findHouse(name: "Lannister")
         
-        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
-        arya = Person(name: "Arya", house: starkHouse)
-        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse, character: "")
+        arya = Person(name: "Arya", house: starkHouse, character: "")
+        tyrion = Person(name: "Tyrion", alias: "The Imp",  house: lannisterHouse, character: "")
 
         
         

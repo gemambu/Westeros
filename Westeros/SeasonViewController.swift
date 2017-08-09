@@ -76,6 +76,8 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
     }
 
     @objc func displayEpisodes(){
+      
+        
         let episodesVC = EpisodesTableViewController(model: model.sortedEpisodes(), season: model.number)
         
         navigationController?.pushViewController(episodesVC, animated: true)

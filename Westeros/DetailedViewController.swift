@@ -10,6 +10,9 @@ import UIKit
 
 extension UIViewController {
     
+    /**
+     Método auxiliar para manejar el botón de Split
+     **/
     func manageSplitButton(){
         
         if UIDevice.current.userInterfaceIdiom.rawValue == 1 {
