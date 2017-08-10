@@ -92,11 +92,11 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgW-Wi-gBq" userLabel="wikiSV">
-                    <rect key="frame" x="172" y="196" width="30" height="30"/>
+                    <rect key="frame" x="157.5" y="196" width="59" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3q-R2-iQw">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                            <state key="normal" title="Wiki"/>
+                            <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
+                            <state key="normal" title="Wiki Info"/>
                         </button>
                     </subviews>
                 </stackView>

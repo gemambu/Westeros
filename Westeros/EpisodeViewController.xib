@@ -51,7 +51,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-7H-30s">
                             <rect key="frame" x="0.0" y="0.0" width="175" height="13.5"/>
-                            <state key="normal" title="Wiki info"/>
+                            <state key="normal" title="Wiki Info"/>
                         </button>
                     </subviews>
                 </stackView>

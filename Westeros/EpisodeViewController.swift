@@ -52,6 +52,11 @@ class EpisodeViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightButton
         
         self.wikiButton.addTarget(self, action:  #selector(displayWiki), for:.touchDown)
+        self.wikiButton.titleLabel?.textColor = UIColor.red
+        
+//        summaryField.layer.borderColor =  UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
+//        summaryField.layer.borderWidth = 1.0
+//        summaryField.layer.cornerRadius = 8
         
     }
     

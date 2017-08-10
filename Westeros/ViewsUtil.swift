@@ -25,4 +25,5 @@ func setupSummaryView(summaryField: UITextView){
 func setTabBarAppearance(){
     UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 15)!], for: .normal)
     UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -15)
+    UITabBarItem.appearance()
 }

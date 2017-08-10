@@ -64,7 +64,7 @@ class HouseViewController: UIViewController, UISplitViewControllerDelegate {
                                       action: #selector(displayPersons))
         
         // Creamos un boton a la barra del navigationController
-        let wiki = UIBarButtonItem(title: "Wiki",
+        let wiki = UIBarButtonItem(title: "Wiki Info",
                                    style: .plain,
                                    target: self,
                                    action: #selector(displayWiki))
