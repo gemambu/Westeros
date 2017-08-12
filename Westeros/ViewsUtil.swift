@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+ 
 /**
  Método usado para aplicar estilo al campo summary, común en tres vistas
  **/

@@ -32,6 +32,7 @@ class WikiViewController: UIViewController {
         activityView.isHidden = false
         activityView.startAnimating()
         title = self.titleView
+        
         // asignamos como delegado a sí mismo
         browserView.delegate = self
         browserView.loadRequest(URLRequest(url: self.wikiURL))
@@ -60,6 +61,4 @@ extension WikiViewController: UIWebViewDelegate {
         }
     }
     
-    // cargar el metodo si falla la carga!
-
 }

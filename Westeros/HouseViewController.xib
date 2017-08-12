@@ -23,22 +23,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ToB-B6-owq" userLabel="hoseNameSV">
-                    <rect key="frame" x="95" y="70" width="224" height="29"/>
+                <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ToB-B6-owq" userLabel="sigilDescSV">
+                    <rect key="frame" x="95" y="70" width="224" height="26.333333333333329"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBU-CM-9Gb">
-                            <rect key="frame" x="38" y="0.0" width="148" height="29"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sigil Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBU-CM-9Gb" userLabel="Sigil description view">
+                            <rect key="frame" x="26" y="0.0" width="172" height="26.333333333333329"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                             <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-d9-e1q" userLabel="sigilSV">
-                    <rect key="frame" x="-27" y="129" width="468" height="467"/>
+                    <rect key="frame" x="-28.333333333333343" y="126.33333333333334" width="470.66666666666663" height="470"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="AIi-nM-LNr">
-                            <rect key="frame" x="0.0" y="0.0" width="468" height="467"/>
+                            <rect key="frame" x="0.0" y="0.0" width="470.66666666666663" height="470.00000000000006"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" priority="249" constant="250" id="02G-AI-1GI"/>
                                 <constraint firstAttribute="width" secondItem="AIi-nM-LNr" secondAttribute="height" multiplier="1:1" priority="250" id="MXM-qc-TvM"/>
@@ -48,10 +48,10 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dP4-cI-nbx" userLabel="wordsSV">
-                    <rect key="frame" x="182" y="626" width="51" height="25"/>
+                    <rect key="frame" x="182" y="626.33333333333348" width="51" height="24.666666666666629"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="749" verticalHuggingPriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uP-SE-teg">
-                            <rect key="frame" x="0.0" y="0.0" width="51" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="51" height="24.666666666666629"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="21"/>
                             <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

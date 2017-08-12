@@ -9,7 +9,7 @@
 import UIKit
 
 class PersonViewController: UIViewController {
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var aliasLabel: UILabel!
@@ -31,6 +31,12 @@ class PersonViewController: UIViewController {
         super.viewWillAppear(animated)
         syncViewWithModel()
         setupSummaryView(summaryField: self.characterLabel)
+        manageSplitButton()
+        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        manageSplitButton()
     }
     
     func syncViewWithModel(){
@@ -40,7 +46,6 @@ class PersonViewController: UIViewController {
         self.characterLabel.text = model.character
     }
     
-    
-   
+
     
 }

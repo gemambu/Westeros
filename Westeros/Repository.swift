@@ -52,7 +52,7 @@ final class LocalFactory : HouseFactory {
             
             let starkSigil = Sigil(description: "Direwolf", image: starkImage)
             let lannisterSigil = Sigil(description: "Rampant Lion", image: lannisterImage)
-            let targaryenSigil = Sigil(description: "Red three-headed dragon,", image: targaryenImage)
+            let targaryenSigil = Sigil(description: "Red three-headed dragon", image: targaryenImage)
             
             let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
             let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: starkURL)

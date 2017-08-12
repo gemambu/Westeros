@@ -66,8 +66,6 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
                                       target: self,
                                       action: #selector(displayEpisodes))
         
-
-        
         let rightButton : UIBarButtonItem = episodes
         navigationItem.rightBarButtonItem = rightButton
         
@@ -76,25 +74,17 @@ class SeasonViewController: UIViewController, UINavigationControllerDelegate {
     }
 
     @objc func displayEpisodes(){
-      
+
+        let episodes = model.sortedEpisodes()
+        let dataSource = DataSources.episodesDataSource(model: episodes)
+        let episodesDelegate = EpisodesDelegate(model: episodes.first!)
+        let episodesVC = ArrayTableViewController(dataSource: dataSource,
+                                                 delegate: episodesDelegate,
+                                                 title: "Episodes of season \(model.number)",
+                                                 style: .plain).wrappedInNavigation()
         
-        let episodesVC = EpisodesTableViewController(model: model.sortedEpisodes(), season: model.number)
-        
-        navigationController?.pushViewController(episodesVC, animated: true)
+        navigationController?.pushViewController(episodesVC.viewControllers.first!, animated: true)
     }
- 
 
 }
 
-extension SeasonViewController:  SeasonsControllerDelegate {
-    func seasonsViewController(vc: SeasonsTableViewController, didSelectSeason season: Season){
-        model = season
-        
-        //Sincronizamos vista y model
-        viewWillAppear(true)
-        
-        syncViewWithModel()
-        
-        
-    }
-}

@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ ViewController genérico para manejar tablas de datos
+ */
 class ArrayTableViewController<Element>: UITableViewController {
 
     let dataSource : ArrayDataSource<Element>

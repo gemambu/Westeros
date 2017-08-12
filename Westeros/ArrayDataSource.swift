@@ -37,8 +37,6 @@ final class ArrayDataSource<Element> : NSObject, UITableViewDataSource{
         return _model[indexPath.row]
     }
 
-    
-    // Revisar bien esto para entenderlo!!!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let elt = _model[indexPath.row]
         return _cellMaker(elt, tableView)

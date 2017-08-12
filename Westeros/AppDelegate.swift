@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Crear Window
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = UIColor.cyan
         
         // creamos los modelos
         let houses = Repository.local.houses
@@ -30,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* MODELO GENERICO*/
         
         // creamos los controladores
+        
+        // ViewController para Houses
         let dataSource = DataSources.houseDataSource(model: houses)
         let housesDelegate = HousesDelegate(model: houses.first!)
         let housesVC = ArrayTableViewController(dataSource: dataSource,
@@ -37,8 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 title: "Houses",
                                                 style: .plain).wrappedInNavigation()
         
-        
-        
+        // ViewController para Seasons
         let seasonDataSource = DataSources.seasonDataSource(model: seasons)
         let seasonsDelegate = SeasonsDelegate(model: seasons.first!)
         let seasonsVC = ArrayTableViewController(dataSource: seasonDataSource,
@@ -46,11 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 title: "Seasons",
                                                 style: .plain).wrappedInNavigation()
         
-        // creamos los NavigatiobnController para houses y seasons
+        // creamos los NavigationController para houses y seasons
         let navHouse = housesDelegate.getNavVC()
         let navSeason : UINavigationController = seasonsDelegate.getNavVC()
 
-        // Se crea el Tab para Houses y Seasons
+        // Se crea el Tab para los VC de Houses y Seasons
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [housesVC, seasonsVC]
         

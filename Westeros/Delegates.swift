@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Clase Base Genérica para el Delegado
+ */
 class BaseViewControllerDelegate<Element>: NSObject {
     var dataSource : ArrayDataSource<Element>?
     var viewController : UIViewController?
@@ -18,6 +21,9 @@ class BaseViewControllerDelegate<Element>: NSObject {
     }
 }
 
+/*
+ Delegado de Houses
+ */
 final class HousesDelegate:BaseViewControllerDelegate<House>, UITableViewDelegate{
     
     init(model: House){
@@ -36,7 +42,6 @@ final class HousesDelegate:BaseViewControllerDelegate<House>, UITableViewDelegat
         if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
             navVC?.pushViewController(houseVC, animated: true)
         }else {
-            //delegate?.housesViewController(vc: self, didSelectHouse: house)
             let navHouse = UINavigationController(rootViewController: houseVC)
             navVC?.showDetailViewController(navHouse, sender: self)
         }
@@ -44,6 +49,9 @@ final class HousesDelegate:BaseViewControllerDelegate<House>, UITableViewDelegat
     
 }
 
+/*
+ Delegado de Seasons
+ */
 final class SeasonsDelegate:BaseViewControllerDelegate<Season>, UITableViewDelegate{
     
     init(model: Season){
@@ -62,12 +70,67 @@ final class SeasonsDelegate:BaseViewControllerDelegate<Season>, UITableViewDeleg
         if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
             navVC?.pushViewController(seasonVC, animated: true)
         }else {
-            //delegate?.housesViewController(vc: self, didSelectHouse: house)
             let navSeason = UINavigationController(rootViewController: seasonVC)
             navVC?.showDetailViewController(navSeason, sender: self)
         }
     }
 
+}
+
+/*
+ Delegado de Persons
+ */
+final class PersonsDelegate:BaseViewControllerDelegate<Person>, UITableViewDelegate{
+    
+    init(model: Person){
+        super.init()
+        let initVC = PersonViewController(model: model)
+        navVC = UINavigationController()
+        navVC?.pushViewController(initVC, animated: true)
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = dataSource?.element(atIndexPath: indexPath)
+        let personVC = PersonViewController(model: person!)
+        
+        
+        navVC = viewController?.navigationController
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            navVC?.pushViewController(personVC, animated: true)
+        }else {
+            let navPerson = UINavigationController(rootViewController: personVC)
+            navVC?.showDetailViewController(navPerson, sender: self)
+        }
+    }
+    
+}
+
+/*
+ Delegado de Episodes
+ */
+final class EpisodesDelegate:BaseViewControllerDelegate<Episode>, UITableViewDelegate{
+    
+    init(model: Episode){
+        super.init()
+        let initVC = EpisodeViewController(model: model)
+        navVC = UINavigationController()
+        navVC?.pushViewController(initVC, animated: true)
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = dataSource?.element(atIndexPath: indexPath)
+        let episodeVC = EpisodeViewController(model: episode!)
+        
+        
+        navVC = viewController?.navigationController
+        if (UIDevice.current.userInterfaceIdiom.rawValue == 0){
+            navVC?.pushViewController(episodeVC, animated: true)
+        }else {
+            let navPerson = UINavigationController(rootViewController: episodeVC)
+            navVC?.showDetailViewController(navPerson, sender: self)
+        }
+    }
+    
 }
 
 

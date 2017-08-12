@@ -8,8 +8,12 @@
 
 import UIKit
 
+/*
+ DataSource específicos para cada modelo
+ */
 final class DataSources{
     
+    /* DataSource para Houses */
     static func houseDataSource(model: [House])-> ArrayDataSource<House>{
         return ArrayDataSource(model: model, cellMaker: { (house: House, tableView: UITableView)
             -> UITableViewCell in
@@ -29,6 +33,7 @@ final class DataSources{
         })
     }
     
+    /* DataSource para Persons */
     static func personsDataSource(model: [Person])-> ArrayDataSource<Person>{
         return ArrayDataSource(model: model, cellMaker: { (person: Person, tableView: UITableView)
             -> UITableViewCell in
@@ -46,6 +51,7 @@ final class DataSources{
         })
     }
     
+    /* DataSource para Seasons */
     static func seasonDataSource(model: [Season])-> ArrayDataSource<Season>{
         return ArrayDataSource(model: model, cellMaker: { (season: Season, tableView: UITableView)
             -> UITableViewCell in
@@ -63,7 +69,8 @@ final class DataSources{
             return cell!
         })
     }
-    
+
+    /* DataSource para Episodes */
     static func episodesDataSource(model: [Episode])-> ArrayDataSource<Episode>{
         return ArrayDataSource(model: model, cellMaker: { (episode: Episode, tableView: UITableView)
             -> UITableViewCell in
@@ -75,7 +82,7 @@ final class DataSources{
                 cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
             }
             
-            cell?.textLabel?.text = episode.title
+            cell?.textLabel?.text = "\(episode.number)" + " - " + episode.title
             
             return cell!
         })

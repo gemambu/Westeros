@@ -9,8 +9,8 @@
 import UIKit
 
 class EpisodeViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryField: UITextView!
     @IBOutlet weak var airDateField: UILabel!
@@ -38,6 +38,12 @@ class EpisodeViewController: UIViewController {
         setupUI()
         setupSummaryView(summaryField: self.summaryField)
         syncViewWithModel()
+        manageSplitButton()
+        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        manageSplitButton()
     }
     
     func setupUI(){
@@ -53,10 +59,6 @@ class EpisodeViewController: UIViewController {
         
         self.wikiButton.addTarget(self, action:  #selector(displayWiki), for:.touchDown)
         self.wikiButton.titleLabel?.textColor = UIColor.red
-        
-//        summaryField.layer.borderColor =  UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
-//        summaryField.layer.borderWidth = 1.0
-//        summaryField.layer.cornerRadius = 8
         
     }
     
@@ -78,9 +80,16 @@ class EpisodeViewController: UIViewController {
     }
     
     @objc func displayPersons(){
-        let personsVC = PersonsViewController(model: model.sortedMembers())
         
-        navigationController?.pushViewController(personsVC, animated: true)
+        let person = model.sortedMembers()
+        let dataSource = DataSources.personsDataSource(model: person)
+        let personsDelegate = PersonsDelegate(model: person.first!)
+        let personsVC = ArrayTableViewController(dataSource: dataSource,
+                                                 delegate: personsDelegate,
+                                                 title: "Persons",
+                                                 style: .plain).wrappedInNavigation()
+        
+        navigationController?.pushViewController(personsVC.viewControllers.first!, animated: true)
     }
     
 }
