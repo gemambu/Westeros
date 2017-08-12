@@ -37,13 +37,36 @@ Como entrega obligatoria se piden los siguientes puntos:
 Implementar de forma genérica el Delegado para UITableView.
 Con esto, evitamos el código repetitivo en los ViewControllers. Se crea un UITableViewController genérico para Arrays.
 
-Hay que tener en cuenta además el manejo de memoria.
+Tener en cuenta el manejo de memoria.
 
 ## Extras
 
-SplitView y el manejo del botón en ipad portrait
-Información extra en el modelo: detallar aquí los campos nuevos.
-JSON para obtener cierta información detallada de cada modelo
-TDD para el JSON
-Autolayout
-README.md donde se especifica todo
+Se han añadido los siguientes detalles extra en la práctica:
+
+- Se ha añadido un **Split View** que incluye el Tab Bar con el listado de Houses y Seasons. Además se ha implementado el manejo específico del botón _List_ en Ipad: Al entrar en una vista detalle, si el dispositivo es un ipad y se encuentra en portrait, la vista master se oculta automáticamente (ésta aparece haciendo un deslizamiento con el dedo de izquierda a derecha en la parte izquierda de la pantalla, pero no me parecía demasiado intuitivo, así que he decidido añadir esta funcionalidad de accesibilidad)
+- Información extra en los modelos
+	- Person: se añade un campo _character_ donde se especifica un resumen de la historia del personaje
+	- Season:
+		- Número de temporada
+		- Fecha de inicio de emisión
+		- Fecha de fin de emisión	 
+		- Resumen de la temporada
+		- Wiki para obtener más información de la temporada
+	- Episode:
+		- Número de episodio
+		- Título
+		- Fecha de emisión
+		- Resumen del capítulo
+		- Wiki para obtener más información del capítulo
+- La vista que se utiliza para visualizar la Wiki  (_WikiViewController_) se ha modificado para que pueda ser reutilizada por todos los modelos que contienen información de wiki (House, Season, Episode)
+- Se han añadido tres ficheros JSON para obtener cierta información detallada de cada modelo:
+	- EpisodeSummaries
+	- SeasonSummaries
+	- PersonSummaries
+- Para obtener esta información se ha creado una clase extra para leer y manejar los datos del JSON: _RepositoryUtil_  
+- Se ha ampliado el TDD para la lectura y manejo de los JSON
+- Se incluye una clase auxiliar para centralizar el estilo de la vista que contiene los resúmenes de las temporadas, episodios y personajes: _ViewsUtil_
+- A las vistas de detalle se ha aplicado Autolayout, para que su visualización sea correcta tanto en portrait como landscape en cualquier tipo de dispositivo: ipad/iphone
+- Se incluye icono de la aplicación. Generado con [logojoy](https://logojoy.com) y assets generados con [makeappicon.com](http://makeappicon.com)
+- Se incluye otra clase de utilizar para formatear las fechas en formato Date: _DateFormatter_
+- Se incluye este fichero README.md para añadir especificación de todos los puntos anteriormente definidos
