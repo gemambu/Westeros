@@ -15,7 +15,9 @@ extension UIViewController {
      **/
     func manageSplitButton(){
         
-        if UIDevice.current.userInterfaceIdiom.rawValue == 1 {
+        // Se manejará el botón para mostrar el listado en caso de ser iPad
+        // y estar con orientacion Portrait
+        if UIDevice.current.userInterfaceIdiom == .pad {
             if UIDevice.current.orientation.isPortrait == true {
                 let listButton = UIBarButtonItem(title: "List",
                                                  style: .plain,

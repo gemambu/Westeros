@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // creamos los controladores
         
         // ViewController para Houses
-        let dataSource = DataSources.houseDataSource(model: houses)
+        let housesDataSource = DataSources.houseDataSource(model: houses)
         let housesDelegate = HousesDelegate(model: houses.first!)
-        let housesVC = ArrayTableViewController(dataSource: dataSource,
+        let housesVC = ArrayTableViewController(dataSource: housesDataSource,
                                                 delegate: housesDelegate,
                                                 title: "Houses",
                                                 style: .plain).wrappedInNavigation()
@@ -42,14 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seasonDataSource = DataSources.seasonDataSource(model: seasons)
         let seasonsDelegate = SeasonsDelegate(model: seasons.first!)
         let seasonsVC = ArrayTableViewController(dataSource: seasonDataSource,
-                                                delegate: seasonsDelegate,
-                                                title: "Seasons",
-                                                style: .plain).wrappedInNavigation()
+                                                 delegate: seasonsDelegate,
+                                                 title: "Seasons",
+                                                 style: .plain).wrappedInNavigation()
         
-        // creamos los NavigationController para houses y seasons
-        let navHouse = housesDelegate.getNavVC()
-        let navSeason : UINavigationController = seasonsDelegate.getNavVC()
-
         // Se crea el Tab para los VC de Houses y Seasons
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [housesVC, seasonsVC]
@@ -57,20 +53,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Aplicamos estilo al TabBar
         setTabBarAppearance()
         
-        // Creamos el splitViewController
-        let splitVC = UISplitViewController()
         
-        // añadimos el tabBar y por defecto, obtenemos el detalle de la primera casa
-        splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
         
-        //asignamos el rootVC
-        window?.rootViewController = splitVC
+        // creamos los NavigationController para houses y seasons
+        let navHouse = housesDelegate.getNavVC()
+        let navSeason = seasonsDelegate.getNavVC()
+        
+        // Añadimos Split View en caso de estar viendo la app con iPad
+        if (UIDevice.current.userInterfaceIdiom == .pad){
+            
+            // Creamos el splitViewController
+            let splitVC = UISplitViewController()
+            splitVC.viewControllers = [tabBarVC, navHouse, navSeason]
+            
+            //asignamos el rootVC
+            window?.rootViewController = splitVC
+        } else {
+            // En cualquier otro dispositivo, se decide no mostrar el split view
+            window?.rootViewController = tabBarVC
+        }
         
         
         return true
     }
     
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -93,6 +100,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-
+    
 }
 

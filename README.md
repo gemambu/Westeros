@@ -14,7 +14,7 @@ Ambas clases del modelo tienen los siguientes protocolos implementados: CustomSt
 
 Esta información se carga desde un repositorio en local.
 
-###TDD
+####TDD
 
 Tenemos los Tests para el manejo de House(s) y Person(s) así como la obtención de información del Repositorio en local.
 
@@ -67,6 +67,19 @@ Se han añadido los siguientes detalles extra en la práctica:
 - Se ha ampliado el TDD para la lectura y manejo de los JSON
 - Se incluye una clase auxiliar para centralizar el estilo de la vista que contiene los resúmenes de las temporadas, episodios y personajes: _ViewsUtil_
 - A las vistas de detalle se ha aplicado Autolayout, para que su visualización sea correcta tanto en portrait como landscape en cualquier tipo de dispositivo: ipad/iphone
-- Se incluye icono de la aplicación. Generado con [logojoy](https://logojoy.com) y assets generados con [makeappicon.com](http://makeappicon.com)
-- Se incluye otra clase de utilizar para formatear las fechas en formato Date: _DateFormatter_
-- Se incluye este fichero README.md para añadir especificación de todos los puntos anteriormente definidos
+- Icono de la aplicación. Generado con [logojoy.com](https://logojoy.com) y assets generados con [makeappicon.com](http://makeappicon.com)
+- Clase auxiliar para formatear las fechas en formato Date: _DateFormatter_
+- Fichero README.md para añadir especificación de todos los puntos anteriormente definidos
+
+## Mejoras pendientes
+
+A continuación se detallan algunas de las muchas mejoras que se pueden incluir en el proyecto Westeros.
+
+- Mejorar el autolayout de las vistas detalle
+- Añadir celdas personalizadas para los listados
+- Manejar en modo ipad el botón de "atrás" en la vista de detalle de Person
+- Optimizar la gestión de memoria y recursos
+- Obtener toda la información mediante JSON remoto, y en caso de no tener conexión, cargar el repositorio local
+- Mejorar el diseño y estilo de la aplicación (en general, todo el aspecto), utilizando fuentes y colores diferentes a los recursos por defecto
+- Añadir notificaciones para actualizar la información cuando se publique un nuevo capítulo
+- Ampliar el modelo, añadiendo información extra sobre por ejemplo: actores, localizaciones, información sobre las novelas, curiosidades...
